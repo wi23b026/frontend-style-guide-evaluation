@@ -1,0 +1,134 @@
+.dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9998;
+}
+
+.dialog-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+.dialog {
+  background: white;
+  border: 1px solid var(--color-muted-rose);
+  border-radius: 4px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-rose-light);
+}
+
+.dialog-title {
+  font-family: 'Heavitas', Arial, sans-serif;
+  font-size: 18px;
+  color: var(--color-dark-brown);
+  margin: 0;
+}
+
+.dialog-close {
+  background: none;
+  border: none;
+  color: var(--color-dark-brown);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.dialog-close:hover {
+  color: var(--color-red);
+}
+
+.dialog-content {
+  padding: var(--spacing-md);
+}
+
+.dialog-message {
+  font-size: 14px;
+  color: var(--color-dark-brown);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.dialog-footer {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-top: 1px solid var(--color-rose-light);
+  justify-content: flex-end;
+}
+
+.dialog-button {
+  padding: var(--spacing-xs) var(--spacing-md);
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 100px;
+}
+
+.dialog-button-primary {
+  background-color: var(--color-green);
+  color: white;
+}
+
+.dialog-button-primary:hover {
+  background-color: #5ab87f;
+}
+
+.dialog-button-secondary {
+  background-color: transparent;
+  color: var(--color-dark-brown);
+  border: 1px solid var(--color-muted-rose);
+}
+
+.dialog-button-secondary:hover {
+  background-color: var(--color-rose-light);
+}
+
+.dialog-confirm .dialog-button-primary {
+  background-color: var(--color-red);
+}
+
+.dialog-confirm .dialog-button-primary:hover {
+  background-color: #d94949;
+}

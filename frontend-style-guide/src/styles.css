@@ -1,0 +1,433 @@
+/* Global Styles - TAIYAKI SHOP Style Guide */
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+@import "./app/app.css";
+
+@font-face {
+  font-family: "Heavitas";
+  src: url("/assets/font/Heavitas.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+:root {
+  /* Primary Colours (Brand Core) */
+  --color-primary-light: #E6BB82;
+  --color-primary-dark: #372110;
+  
+  /* Secondary Colours (Backgrounds & Surfaces) */
+  --color-sand-light: #FFEDE0;
+  --color-rose-light: #FAD2D2;
+  --color-rose: #FAA2A2;
+  --color-muted-rose: #CC7878;
+  --color-dark-rose: #8F5656;
+  
+  /* Accent Colours (UI States & Actions) */
+  --color-accent-red: #E85C5C;
+  --color-accent-orange: #F2A65A;
+  --color-accent-yellow: #F2D15A;
+  --color-accent-green: #6FCF97;
+  --color-accent-blue: #5C8AE8;
+  --color-accent-indigo: #4B5CC4;
+  --color-accent-violet: #9B6CF2;
+  
+  /* Typography */
+  --font-heading: "Heavitas", sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
+  
+  /* Font Sizes (8pt system) */
+  --font-size-h1: 3rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+  
+  /* Spacing System (8pt Grid) */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  color: var(--color-primary-dark);
+  background-color: #ffffff;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-3);
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h3);
+  font-weight: 700;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+h4 {
+  margin-bottom: var(--space-2);
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: var(--space-2);
+}
+
+ul, ol {
+  margin-left: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+li {
+  margin-bottom: var(--space-1);
+}
+
+/* PrimeNG Button Styling */
+.p-button {
+  border-radius: 0.5rem !important;
+  border: 0.0625rem solid transparent !important;
+  min-height: 2.75rem !important;
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  padding-left: var(--space-2) !important;
+  padding-right: var(--space-2) !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease !important;
+}
+
+.p-button.p-button-rounded {
+  border-radius: 0.5rem !important;
+}
+
+.p-button .p-button-icon-left {
+  margin-right: var(--space-1) !important;
+}
+
+.p-button .p-button-icon-right {
+  margin-left: var(--space-1) !important;
+}
+
+.p-button:focus-visible {
+  box-shadow: 0 0 0 0.1875rem rgba(232, 92, 92, 0.24) !important;
+}
+
+.sg-button-focus-demo.p-button {
+  box-shadow: 0 0 0 0.1875rem rgba(232, 92, 92, 0.24) !important;
+}
+
+.sg-button-primary.p-button {
+  background-color: #ffffff !important;
+  border-color: var(--color-primary-dark) !important;
+  color: var(--color-primary-dark) !important;
+}
+
+.sg-button-primary.p-button:not(:disabled):hover {
+  background-color: var(--color-sand-light) !important;
+  border-color: var(--color-primary-dark) !important;
+  color: var(--color-primary-dark) !important;
+}
+
+.sg-button-primary-inverted.p-button {
+  background-color: var(--color-primary-dark) !important;
+  border-color: var(--color-primary-dark) !important;
+  color: #ffffff !important;
+}
+
+.sg-button-primary-inverted.p-button:not(:disabled):hover {
+  background-color: #24150a !important;
+  border-color: #24150a !important;
+  color: #ffffff !important;
+}
+
+.sg-button-secondary.p-button {
+  background-color: #ffffff !important;
+  border-color: var(--color-primary-dark) !important;
+  color: var(--color-primary-dark) !important;
+}
+
+.sg-button-secondary.p-button:not(:disabled):hover {
+  background-color: var(--color-sand-light) !important;
+  border-color: var(--color-primary-dark) !important;
+  color: var(--color-primary-dark) !important;
+}
+
+.sg-button-save.p-button {
+  background-color: var(--color-accent-green) !important;
+  border-color: var(--color-accent-green) !important;
+  color: #ffffff !important;
+}
+
+.sg-button-save.p-button:not(:disabled):hover {
+  background-color: #58bd82 !important;
+  border-color: #58bd82 !important;
+}
+
+.sg-button-cancel.p-button {
+  background-color: var(--color-accent-red) !important;
+  border-color: var(--color-accent-red) !important;
+  color: #ffffff !important;
+}
+
+.sg-button-cancel.p-button:not(:disabled):hover {
+  background-color: #d94f4f !important;
+  border-color: #d94f4f !important;
+  color: #ffffff !important;
+}
+
+.sg-button-dark.p-button {
+  background-color: var(--color-primary-dark) !important;
+  border-color: var(--color-primary-dark) !important;
+  color: #ffffff !important;
+}
+
+.sg-button-dark.p-button:not(:disabled):hover {
+  background-color: #24150a !important;
+  border-color: #24150a !important;
+}
+
+.p-button.p-disabled,
+.p-button:disabled {
+  opacity: 0.56 !important;
+}
+
+/* PrimeNG Table Styling */
+.p-datatable {
+  border: 0.0625rem solid #ddd;
+  border-radius: 0.5rem;
+  font-family: var(--font-body) !important;
+  overflow: hidden;
+}
+
+.p-datatable-table {
+  border-collapse: collapse;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background-color: var(--color-sand-light) !important;
+  border-bottom: 0.125rem solid var(--color-primary-light) !important;
+  color: var(--color-primary-dark) !important;
+  font-weight: 600;
+  padding: var(--space-2) !important;
+  text-align: left;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+  background-color: #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+.p-datatable .p-datatable-tbody > tr:nth-child(even) {
+  background-color: #fff8f2;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  background-color: inherit !important;
+  transition: background-color 0.2s ease;
+}
+
+.p-datatable .p-datatable-tbody > tr:nth-child(odd):hover,
+.p-datatable .p-datatable-tbody > tr:nth-child(odd):hover > td {
+  background-color: #fff8f2 !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:nth-child(even):hover,
+.p-datatable .p-datatable-tbody > tr:nth-child(even):hover > td {
+  background-color: #fff8f2 !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  border-bottom: 0.0625rem solid #eee !important;
+  color: var(--color-primary-dark);
+  padding: var(--space-2) !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:last-child > td {
+  border-bottom: 0 !important;
+}
+
+/* PrimeNG Select Styling */
+.p-select {
+  background-color: #ffffff !important;
+  border: 0.0625rem solid #ddd !important;
+  border-radius: 0.25rem !important;
+  color: var(--color-primary-dark) !important;
+  font-family: var(--font-body) !important;
+  min-height: 2.75rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.sg-select {
+  width: 100%;
+}
+
+.p-select:not(.p-disabled):hover {
+  border-color: var(--color-primary-light) !important;
+}
+
+.p-select.p-focus,
+.p-select.p-select-open {
+  border-color: var(--color-accent-red) !important;
+  box-shadow: 0 0 0 0.1875rem rgba(232, 92, 92, 0.16) !important;
+}
+
+.p-select-label {
+  color: var(--color-primary-dark) !important;
+  padding: 0.625rem 0.75rem !important;
+}
+
+.p-select-label.p-placeholder {
+  color: #666 !important;
+}
+
+.p-select-dropdown {
+  color: var(--color-primary-dark) !important;
+  width: 2.75rem !important;
+}
+
+.p-select-overlay {
+  background-color: #ffffff !important;
+  border: 0.0625rem solid #ddd !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 0.5rem 1.5rem rgba(55, 33, 16, 0.16) !important;
+  color: var(--color-primary-dark) !important;
+  overflow: hidden;
+  z-index: 1100 !important;
+}
+
+.p-select-list {
+  background-color: #ffffff !important;
+  margin: 0;
+  padding: var(--space-1);
+}
+
+.p-select-option {
+  background-color: #ffffff !important;
+  border-radius: 0.25rem;
+  color: var(--color-primary-dark) !important;
+  padding: var(--space-1) var(--space-2) !important;
+}
+
+.p-select-option:not(.p-disabled):hover,
+.p-select-option.p-focus {
+  background-color: var(--color-sand-light) !important;
+}
+
+.p-select-option.p-select-option-selected {
+  background-color: var(--color-primary-light) !important;
+  color: var(--color-primary-dark) !important;
+  font-weight: 600;
+}
+
+/* PrimeNG InputText Styling */
+.p-inputtext.sg-input {
+  background-color: #ffffff !important;
+  border: 0.0625rem solid #ddd !important;
+  border-radius: 0.25rem !important;
+  color: var(--color-primary-dark) !important;
+  font-family: var(--font-body) !important;
+  min-height: 2.75rem;
+  padding: 0.625rem 0.75rem !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  width: 100%;
+}
+
+.p-inputtext.sg-input::placeholder {
+  color: #666;
+}
+
+.p-inputtext.sg-input:hover {
+  border-color: var(--color-primary-light) !important;
+}
+
+.p-inputtext.sg-input:focus {
+  border-color: var(--color-accent-red) !important;
+  box-shadow: 0 0 0 0.1875rem rgba(232, 92, 92, 0.16) !important;
+  outline: none;
+}
+
+.p-inputtext.sg-input-error {
+  border-color: var(--color-accent-red) !important;
+}
+
+.p-inputtext.sg-input-error:focus {
+  box-shadow: 0 0 0 0.1875rem rgba(232, 92, 92, 0.16) !important;
+}
+
+.p-inputtext.sg-input-success {
+  border-color: var(--color-accent-green) !important;
+}
+
+.p-inputtext.sg-input-success:focus {
+  box-shadow: 0 0 0 0.1875rem rgba(111, 207, 151, 0.2) !important;
+}
+
+/* PrimeNG Dialog Styling */
+.p-dialog {
+  background-color: #ffffff !important;
+  border: 0.0625rem solid var(--color-primary-light) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 1rem 3rem rgba(55, 33, 16, 0.2) !important;
+  color: var(--color-primary-dark) !important;
+  overflow: hidden;
+}
+
+.p-dialog .p-dialog-header {
+  background-color: var(--color-sand-light) !important;
+  border-bottom: 0.125rem solid var(--color-primary-light) !important;
+  color: var(--color-primary-dark) !important;
+  padding: var(--space-3) !important;
+}
+
+.p-dialog .p-dialog-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h3);
+}
+
+.p-dialog .p-dialog-content {
+  background-color: #ffffff !important;
+  color: var(--color-primary-dark) !important;
+  padding: var(--space-3) !important;
+}
+
+.p-dialog .p-dialog-footer {
+  background-color: #ffffff !important;
+  border-top: 0.0625rem solid #eee !important;
+  padding: var(--space-2) var(--space-3) !important;
+}
+
+.p-dialog-mask {
+  background-color: rgba(55, 33, 16, 0.32) !important;
+}
+
+.sg-demo-dialog {
+  width: min(50vw, calc(100vw - 2rem)) !important;
+}
+
+@media (max-width: 48rem) {
+  .sg-demo-dialog {
+    width: calc(100vw - 2rem) !important;
+  }
+}

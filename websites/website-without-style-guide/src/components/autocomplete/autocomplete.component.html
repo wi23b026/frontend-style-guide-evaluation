@@ -1,0 +1,23 @@
+<div class="autocomplete-container">
+  <input
+    type="text"
+    [value]="value"
+    [placeholder]="placeholder"
+    (input)="onInput($event)"
+    (keydown)="onKeyDown($event)"
+    (focus)="onFocus()"
+    (blur)="onBlur()"
+    class="autocomplete-input"
+  />
+
+  <div *ngIf="showSuggestions && filteredSuggestions.length > 0" class="suggestions-dropdown">
+    <div
+      *ngFor="let suggestion of filteredSuggestions; let i = index"
+      [class.highlighted]="i === selectedIndex"
+      (mousedown)="selectSuggestion(suggestion)"
+      class="suggestion-item"
+    >
+      {{ suggestion }}
+    </div>
+  </div>
+</div>

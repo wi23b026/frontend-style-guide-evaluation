@@ -1,0 +1,145 @@
+<section id="design-foundations" class="sg-section">
+  <h2>Design Foundations</h2>
+
+  <app-sg-colors></app-sg-colors>
+  <app-sg-typography></app-sg-typography>
+  <app-sg-spacing></app-sg-spacing>
+
+  <section class="sg-subsection">
+    <h3>Layout Structure</h3>
+    <div class="sg-guidelines">
+      <h4>Grid System</h4>
+      <ul>
+        <li>Desktop: 12-column grid</li>
+        <li>Tablet: 8-column grid</li>
+        <li>Mobile: 4-column grid</li>
+      </ul>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Container</h4>
+      <pre><code>max-width: 120rem;
+margin: 0 auto;
+padding: 0 1rem;</code></pre>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Layout Principles</h4>
+      <ul>
+        <li>Grid-aligned layout structure</li>
+        <li>Consistent spacing and component placement</li>
+        <li>Whitespace used intentionally</li>
+        <li>Minimal and structured layout design</li>
+        <li>Use the same visual rhythm for equivalent pages, such as search, form, summary and table order</li>
+        <li>Do not introduce page-specific visual systems unless the style guide is updated first</li>
+      </ul>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Standard Page Structure</h4>
+      <ul>
+        <li>Global navigation is placed at the top of every page</li>
+        <li>Page content is placed in a centred container with max-width: 120rem</li>
+        <li>Page title and primary controls appear before data-heavy sections</li>
+        <li>Forms appear before the related table when the form creates or edits table content</li>
+        <li>Search and filters appear directly above the table they affect</li>
+        <li>Feedback containers such as notifications and dialogs are global overlays, not nested inside cards</li>
+        <li>Primary page actions align with the page title or related section header</li>
+        <li>Secondary actions stay close to the content they affect</li>
+      </ul>
+    </div>
+
+    <div class="components-demo">
+      <h4>Page Layout Example</h4>
+      <div class="page-layout-example">
+        <div class="page-layout-nav">Navigation</div>
+        <div class="page-layout-content">
+          <div class="page-layout-title">Page title + primary action</div>
+          <div class="page-layout-form">Form / filters</div>
+          <div class="page-layout-table">Table / main content</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-subsection">
+    <h3>Logo in UI</h3>
+    <div class="components-demo logo-demo">
+      <h4>Example</h4>
+      <div class="logo-examples">
+        <div class="logo-example-group">
+          <h5>Icon</h5>
+          <div class="logo-size-row">
+            <div class="logo-example">
+              <img class="logo-size-large" src="/assets/images/Taiyaki_Icon.png" alt="TAIYAKI SHOP icon mark large size" />
+              <span>Large: 15rem</span>
+            </div>
+            <div class="logo-example">
+              <img class="logo-size-medium" src="/assets/images/Taiyaki_Icon.png" alt="TAIYAKI SHOP icon mark medium size" />
+              <span>Medium: 10rem</span>
+            </div>
+            <div class="logo-example">
+              <img class="logo-size-minimum" src="/assets/images/Taiyaki_Icon.png" alt="TAIYAKI SHOP icon mark minimum size" />
+              <span>Minimum: 7.5rem</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="logo-example-group">
+          <h5>Logo</h5>
+          <div class="logo-size-row">
+            <div class="logo-example">
+              <img class="logo-size-large" src="/assets/images/Taiyaki_Logo.png" alt="TAIYAKI SHOP logo wordmark large size" />
+              <span>Large: 15rem</span>
+            </div>
+            <div class="logo-example">
+              <img class="logo-size-medium" src="/assets/images/Taiyaki_Logo.png" alt="TAIYAKI SHOP logo wordmark medium size" />
+              <span>Medium: 10rem</span>
+            </div>
+            <div class="logo-example">
+              <img class="logo-size-minimum" src="/assets/images/Taiyaki_Logo.png" alt="TAIYAKI SHOP logo wordmark minimum size" />
+              <span>Minimum: 7.5rem</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="logo-example-group">
+          <h5>Logo on Dark Background</h5>
+          <div class="logo-size-row">
+            <div class="logo-dark-example">
+              <img class="logo-size-large" src="/assets/images/Taiyaki_Logo_White.png" alt="TAIYAKI SHOP white logo wordmark large size on dark background" />
+              <span>Large: 15rem</span>
+            </div>
+            <div class="logo-dark-example">
+              <img class="logo-size-medium" src="/assets/images/Taiyaki_Logo_White.png" alt="TAIYAKI SHOP white logo wordmark medium size on dark background" />
+              <span>Medium: 10rem</span>
+            </div>
+            <div class="logo-dark-example">
+              <img class="logo-size-minimum" src="/assets/images/Taiyaki_Logo_White.png" alt="TAIYAKI SHOP white logo wordmark minimum size on dark background" />
+              <span>Minimum: 7.5rem</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>Minimum width: 7.5rem</li>
+        <li>Clear space equals the height of "T"</li>
+        <li>Default: dark brown on light backgrounds</li>
+        <li>White version for dark sections</li>
+      </ul>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Never</h4>
+      <ul>
+        <li>Stretch or distort</li>
+        <li>Apply shadows or effects</li>
+        <li>Change brand colours</li>
+      </ul>
+    </div>
+  </section>
+</section>

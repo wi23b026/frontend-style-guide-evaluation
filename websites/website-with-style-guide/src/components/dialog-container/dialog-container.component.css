@@ -1,0 +1,22 @@
+.dialog-body {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.dialog-body .pi {
+  color: var(--color-accent-blue);
+  font-size: 1.5rem;
+  margin-top: 0.125rem;
+}
+
+.dialog-body-confirm .pi {
+  color: var(--color-accent-orange);
+}
+
+.dialog-message {
+  color: var(--color-primary-dark);
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-line;
+}

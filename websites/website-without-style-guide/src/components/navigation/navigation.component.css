@@ -1,0 +1,115 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--color-dark-brown);
+  border-bottom: 2px solid var(--color-light-brown);
+}
+
+.nav-start {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.navbar-logo {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+.nav-title {
+  font-family: 'Heavitas', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.nav-items {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border: 1px solid white;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--color-light-brown);
+  color: var(--color-dark-brown);
+}
+
+.nav-link-alt {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border: 1px solid white;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nav-link-alt:hover {
+  background-color: var(--color-light-brown);
+  color: var(--color-dark-brown);
+}
+
+.nav-end {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.icon-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.2s ease;
+}
+
+.icon-btn:hover {
+  background-color: var(--color-light-brown);
+  color: var(--color-dark-brown);
+}
+
+.icon-btn-alt {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.2s ease;
+}
+
+.icon-btn-alt:hover {
+  background-color: var(--color-light-brown);
+  color: var(--color-dark-brown);
+}

@@ -1,0 +1,13 @@
+<div class="notification-container" aria-live="polite">
+  <div
+    *ngFor="let notification of notifications"
+    [class]="'notification notification-' + notification.type"
+    [attr.role]="notification.type === 'error' ? 'alert' : 'status'"
+  >
+    <i [class]="getIcon(notification.type)" aria-hidden="true"></i>
+    <span class="notification-message">{{ notification.message }}</span>
+    <button class="notification-close" (click)="remove(notification.id)" aria-label="Close notification">
+      <i class="pi pi-times" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.space-demo {
+  background-color: var(--color-dark-rose);
+}
+
+.space-demo-1 {
+  height: var(--space-1);
+}
+
+.space-demo-2 {
+  height: var(--space-2);
+}
+
+.space-demo-3 {
+  height: var(--space-3);
+}
+
+.space-demo-4 {
+  height: var(--space-4);
+}
+
+.space-demo-5 {
+  height: var(--space-5);
+}

@@ -1,0 +1,30 @@
+<div class="autocomplete-container">
+  <input
+    [id]="inputId"
+    class="sg-input autocomplete-input"
+    type="text"
+    pInputText
+    [value]="value"
+    [placeholder]="placeholder"
+    (input)="onInput($event)"
+    (keydown)="onKeyDown($event)"
+    (focus)="onFocus()"
+    (blur)="onBlur()"
+    [class.sg-input-error]="invalid"
+    [attr.aria-invalid]="invalid"
+    [attr.aria-describedby]="describedBy"
+  />
+
+  <div *ngIf="showSuggestions && filteredSuggestions.length > 0" class="suggestions-dropdown">
+    <div
+      *ngFor="let suggestion of filteredSuggestions; let i = index"
+      [class.highlighted]="i === selectedIndex"
+      (mousedown)="selectSuggestion(suggestion)"
+      class="suggestion-item"
+      role="option"
+      [attr.aria-selected]="i === selectedIndex"
+    >
+      {{ suggestion }}
+    </div>
+  </div>
+</div>

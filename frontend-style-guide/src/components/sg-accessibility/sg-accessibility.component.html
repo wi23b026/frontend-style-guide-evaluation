@@ -1,0 +1,70 @@
+<section id="accessibility" class="sg-section">
+  <h2>Accessibility</h2>
+
+  <div class="sg-guidelines">
+    <h3>Standard & Compliance</h3>
+    <ul>
+      <li>WCAG 2.1 Level AA compliance required</li>
+      <li>Accessibility applies to visual design, component behaviour, wording and technical implementation</li>
+    </ul>
+  </div>
+
+  <div class="sg-guidelines">
+    <h3>Visual Accessibility</h3>
+    <ul>
+      <li>Contrast ratios:</li>
+      <ul>
+          <li>Text: 4.5:1</li>
+          <li>Headings: 3:1</li>
+        </ul>
+      <li>No reliance on colour alone</li>
+      <li>Text must use the documented type scale and readable line height</li>
+      <li>Small text must still meet contrast requirements and remain legible on mobile viewports</li>
+    </ul>
+  </div>
+
+  <div class="sg-guidelines">
+    <h3>Interaction Accessibility</h3>
+    <ul>
+      <li>Keyboard navigation required</li>
+      <li>Visible focus indicators required</li>
+      <li>Click targets >= 2.75rem</li>
+      <li>Proper form labels and validation required</li>
+      <li>Interactive states must be available for hover, focus, active, disabled and loading where relevant</li>
+    </ul>
+  </div>
+
+  <div class="sg-guidelines">
+    <h3>Semantic HTML (Best Practices)</h3>
+    <ul>
+      <li>Use semantic HTML elements (&lt;main&gt;, &lt;section&gt;, &lt;nav&gt;) instead of generic &lt;div&gt; elements where possible</li>
+      <li>Use IDs and ARIA labels where needed</li>
+    </ul>
+  </div>
+
+  <div class="sg-guidelines">
+    <h3>ARIA Roles & Labels</h3>
+    <ul>
+      <li>Use ARIA attributes to describe element roles and states</li>
+      <li>Use ARIA labels to clarify function (e.g. button purpose)</li>
+      <li>Use ARIA attributes when semantic HTML is insufficient</li>
+    </ul>
+    <pre><code>&lt;button aria-label="Save content"&gt;Save&lt;/button&gt;</code></pre>
+  </div>
+
+  <div class="sg-guidelines">
+    <h3>Keyboard Navigation</h3>
+    <ul>
+      <li>Make sure all interactive elements are accessible via keyboard</li>
+      <li>Focus indicators must clearly highlight active elements</li>
+      <li>Full keyboard operability required</li>
+    </ul>
+  </div>
+
+  <div class="sg-guidelines">
+    <h3>Images & Alternative Text</h3>
+    <ul>
+      <li>All images must include meaningful alt text</li>
+    </ul>
+  </div>
+</section>

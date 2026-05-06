@@ -1,0 +1,117 @@
+<section id="technical" class="sg-section">
+  <h2>Technical Guidelines</h2>
+
+  <div class="sg-guidelines">
+    <h3>Framework & Libraries</h3>
+    <ul>
+      <li>PrimeNG (UI components)</li>
+      <li>PrimeFlex (layout & spacing)</li>
+      <li>Angular v21.2.9</li>
+      <li>PrimeNG v21.1.6</li>
+    </ul>
+  </div>
+
+  <div class="sg-guidelines">
+    <h3>Approved Library Usage</h3>
+    <ul>
+      <li>Angular standalone components are the standard implementation model</li>
+      <li>PrimeNG is the approved component library for buttons, tables, dialogs, selects and form controls</li>
+      <li>PrimeIcons is the only approved icon library</li>
+      <li>PrimeFlex may be used for layout utilities, but spacing must still follow the documented 8pt scale</li>
+      <li>Custom components are only allowed when PrimeNG does not provide the required behaviour</li>
+    </ul>
+  </div>
+
+  <div class="sg-guidelines">
+    <h3>Usage Principles</h3>
+    <ul>
+      <li>Prefer PrimeNG components over custom implementations</li>
+      <li>Extend existing components instead of overriding</li>
+      <li>Maintain separation of concerns</li>
+    </ul>
+  </div>
+
+  <div class="sg-guidelines">
+    <h3>Coding Standards</h3>
+    <ul>
+      <li>Modular structure:</li>
+      <ul>
+          <li>/components</li>
+          <li>/pages</li>
+          <li>/services</li>
+          <li>/assets</li>
+        </ul>
+      <li>Separation of logic, layout, and styling</li>
+      <li>No inline styles unless necessary</li>
+      <li>Use CSS custom properties and documented styleClass values for colours, spacing, typography and component states</li>
+      <li>Do not create new component-specific style classes for patterns already documented in the guide</li>
+      <li>Keep templates declarative; move calculations, mapping and API orchestration into TypeScript services or page logic</li>
+    </ul>
+  </div>
+
+  <div class="sg-guidelines">
+    <h3>API Integration</h3>
+    <ul>
+      <li>UI is independent of API logic</li>
+      <li>Service layer handles API communication</li>
+      <li>Components call services or facades, never backend endpoints directly</li>
+      <li>Services return typed UI-ready data or typed state objects</li>
+      <li>Standard states:
+        <ul>
+          <li>loading</li>
+          <li>error</li>
+          <li>empty</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="sg-guidelines">
+    <h3>API Call Rules</h3>
+    <ul>
+      <li>Components must not call HTTP APIs directly</li>
+      <li>API calls must be wrapped in Angular services in /services</li>
+      <li>Services expose typed methods such as getProducts(), createProduct(product), updateProduct(product) and deleteProduct(id)</li>
+      <li>Components receive loading, error, empty and success states from services or a page-level facade</li>
+      <li>API errors must be mapped to messages that follow the wording rules before they are displayed</li>
+      <li>Destructive API calls must require confirmation before the request is sent</li>
+    </ul>
+  </div>
+
+  <div class="sg-guidelines">
+    <h3>Frontend / Backend Connection</h3>
+    <ul>
+      <li>Backend DTOs must be mapped to UI models before rendering</li>
+      <li>Backend field names must not leak into templates when they differ from user-facing terminology</li>
+      <li>Forms submit validated UI models to services, not raw template values</li>
+      <li>Tables consume display-ready data and must not transform API payloads in templates</li>
+      <li>Components display loading, empty, success and error states provided by services or page facades</li>
+      <li>Notifications and dialogs are handled by shared services so feedback is consistent across pages</li>
+    </ul>
+  </div>
+
+  <div class="sg-guidelines">
+    <h3>Implementation Support</h3>
+    <ul>
+      <li>Developers should copy approved component examples from this guide instead of inventing new style classes</li>
+      <li>The guide should remove the need to decide low-level styling details such as colours, spacing, border radius, button shape or focus style during feature work</li>
+      <li>Testers can use the documented component states as acceptance criteria</li>
+      <li>Business stakeholders can use the component catalogue to understand which interface patterns are available</li>
+    </ul>
+  </div>
+
+  <div class="sg-guidelines">
+    <h3>Versioning</h3>
+    <ul>
+      <li>Current style guide version: 1.1.0</li>
+      <li>Application implementations must state which style guide version they follow</li>
+      <li>Semantic versioning:
+        <ul>
+          <li>1.0.0 initial release</li>
+          <li>1.1.0 feature updates</li>
+          <li>1.1.1 bug fixes</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+<nav class="navbar" aria-label="Main navigation">
+  <a routerLink="/" class="nav-brand" aria-label="Taiyaki Shop home">
+    <img src="assets/images/Taiyaki_Logo_White.png" alt="Taiyaki Shop Logo" class="navbar-logo" />
+  </a>
+
+  <div class="nav-actions">
+    <div class="nav-items">
+      <a routerLink="/" routerLinkActive="nav-link-active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">Products</a>
+      <a routerLink="/users" routerLinkActive="nav-link-active" class="nav-link">User</a>
+    </div>
+
+    <p-button
+      routerLink="/profile"
+      icon="pi pi-user"
+      styleClass="sg-button-primary nav-profile"
+      ariaLabel="Profile"
+    ></p-button>
+  </div>
+</nav>

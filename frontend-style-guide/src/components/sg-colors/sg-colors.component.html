@@ -1,0 +1,124 @@
+<section id="colors" class="sg-subsection">
+  <h3>Colour System</h3>
+  <p>A unified and strictly defined colour system ensures visual consistency across the application.</p>
+
+  <div class="color-group">
+    <h4>Primary Colours (Brand Core)</h4>
+    <div class="colors-grid">
+      <div class="color-swatch">
+        <div class="swatch swatch-primary-light"></div>
+        <span class="label">--color-primary-light</span>
+        <span class="code">#E6BB82</span>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch swatch-primary-dark"></div>
+        <span class="label">--color-primary-dark</span>
+        <span class="code">#372110</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="color-group">
+    <h4>Secondary Colours (Backgrounds & Surfaces)</h4>
+    <div class="colors-grid">
+      <div class="color-swatch">
+        <div class="swatch swatch-sand-light"></div>
+        <span class="label">--color-sand-light</span>
+        <span class="code">#FFEDE0</span>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch swatch-rose-light"></div>
+        <span class="label">--color-rose-light</span>
+        <span class="code">#FAD2D2</span>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch swatch-rose"></div>
+        <span class="label">--color-rose</span>
+        <span class="code">#FAA2A2</span>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch swatch-muted-rose"></div>
+        <span class="label">--color-muted-rose</span>
+        <span class="code">#CC7878</span>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch swatch-dark-rose"></div>
+        <span class="label">--color-dark-rose</span>
+        <span class="code">#8F5656</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="color-group">
+    <h4>Accent Colours (UI States & Actions)</h4>
+    <div class="colors-grid">
+      <div class="color-swatch">
+        <div class="swatch swatch-accent-red"></div>
+        <span class="label">--color-accent-red</span>
+        <span class="code">#E85C5C</span>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch swatch-accent-orange"></div>
+        <span class="label">--color-accent-orange</span>
+        <span class="code">#F2A65A</span>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch swatch-accent-yellow"></div>
+        <span class="label">--color-accent-yellow</span>
+        <span class="code">#F2D15A</span>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch swatch-accent-green"></div>
+        <span class="label">--color-accent-green</span>
+        <span class="code">#6FCF97</span>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch swatch-accent-blue"></div>
+        <span class="label">--color-accent-blue</span>
+        <span class="code">#5C8AE8</span>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch swatch-accent-indigo"></div>
+        <span class="label">--color-accent-indigo</span>
+        <span class="code">#4B5CC4</span>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch swatch-accent-violet"></div>
+        <span class="label">--color-accent-violet</span>
+        <span class="code">#9B6CF2</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sg-guidelines">
+    <h4>Usage Rules</h4>
+    <ul>
+      <li>Primary colours: branding and structural UI elements</li>
+      <li>Secondary colours: backgrounds and layout surfaces</li>
+      <li>Accent colours: interactive elements only (buttons, links, states)</li>
+      <li>Maximum of 2-3 accent colours per view</li>
+      <li>Standardised colour codes must always be used</li>
+      <li>Contrast ratios must always meet accessibility requirements</li>
+    </ul>
+  </div>
+
+  <div class="sg-guidelines">
+    <h4>Contrast Mode / Dark Mode</h4>
+    <ul>
+      <li>The default product interface uses the light theme documented in this style guide</li>
+      <li>Dark mode must use --color-primary-dark as the main background and white or sand-light text on top</li>
+      <li>Interactive states keep the same accent colours so success, warning, error and information remain recognisable</li>
+      <li>Surfaces in dark mode must use a visible border with --color-primary-light or --color-muted-rose</li>
+      <li>Dark mode is optional, but if implemented it must meet WCAG 2.1 AA contrast and reuse the same component structure</li>
+    </ul>
+  </div>
+
+  <div class="components-demo">
+    <h4>Dark Mode Example</h4>
+    <div class="dark-mode-example">
+      <span class="dark-mode-title">TAIYAKI SHOP</span>
+      <span class="dark-mode-text">Dark surfaces use high contrast text and the same action colours.</span>
+      <button class="dark-mode-button" type="button">Save</button>
+    </div>
+  </div>
+</section>

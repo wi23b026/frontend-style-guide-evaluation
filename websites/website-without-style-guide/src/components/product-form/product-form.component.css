@@ -1,0 +1,103 @@
+.product-form {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: white;
+  border: 1px solid var(--color-muted-rose);
+  border-radius: 8px;
+}
+
+.field-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+}
+
+.field-row label {
+  font-weight: 600;
+  color: var(--color-dark-brown);
+  font-size: 14px;
+}
+
+.field-row input,
+.field-row select {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--color-muted-rose);
+  border-radius: 4px;
+  background: white;
+  color: var(--color-dark-brown);
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: border-color 0.2s ease;
+}
+
+.field-row input:focus,
+.field-row select:focus {
+  outline: none;
+  border-color: var(--color-dark-brown);
+  box-shadow: 0 0 0 3px rgba(55, 33, 16, 0.1);
+}
+
+.field-row input.error,
+.field-row select.error {
+  border-color: var(--color-red);
+}
+
+.field-row input.error:focus,
+.field-row select.error:focus {
+  box-shadow: 0 0 0 3px rgba(232, 92, 92, 0.1);
+}
+
+.error-message {
+  font-size: 12px;
+  color: var(--color-red);
+  font-weight: 500;
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  width: 100%;
+  margin-top: var(--spacing-md);
+}
+
+.form-button {
+  border: none;
+  width: auto;
+  height: auto;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--color-green);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.form-button:hover {
+  background-color: #5ab87f;
+}
+
+.form-button-secondary {
+  border: 1px solid var(--color-muted-rose);
+  background-color: white;
+  color: var(--color-dark-brown);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-button-secondary:hover {
+  background-color: var(--color-rose-light);
+  border-color: var(--color-dark-brown);
+}

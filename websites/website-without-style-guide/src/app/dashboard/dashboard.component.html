@@ -1,0 +1,38 @@
+<app-notification-container></app-notification-container>
+<app-dialog-container></app-dialog-container>
+
+<div class="page-layout">
+  <div class="search-section">
+    <label for="search">Search products</label>
+    <app-autocomplete
+      [suggestions]="searchSuggestions"
+      [value]="searchTerm"
+      (valueChange)="searchTerm = $event"
+      placeholder="Enter name, category or price"
+    ></app-autocomplete>
+  </div>
+
+  <div class="form-section">
+    <h2>{{ isEditMode ? 'Edit Product' : 'Add new product' }}</h2>
+    <app-product-form
+      [editingProduct]="editingProduct"
+      (productAdd)="addProduct($event)"
+      (productUpdate)="onUpdateProduct($event)"
+      (cancel)="cancelEdit()"
+    ></app-product-form>
+  </div>
+
+  <div class="table-section">
+    <div class="table-header-row">
+      <h2>Products ({{ filteredProducts.length }})</h2>
+      <button class="help-button" (click)="showHelp()" aria-label="Show help">
+        ?
+      </button>
+    </div>
+    <app-table
+      [products]="filteredProducts"
+      (edit)="onEditProduct($event)"
+      (delete)="onDeleteProduct($event)"
+    ></app-table>
+  </div>
+</div>

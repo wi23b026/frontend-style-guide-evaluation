@@ -1,0 +1,110 @@
+.page-layout {
+  display: block;
+  padding: var(--spacing-lg);
+  background-color: var(--color-sand-light);
+  min-height: 100vh;
+}
+
+h2 {
+  font-family: 'Heavitas', Arial, sans-serif;
+  color: var(--color-dark-brown);
+  font-size: 28px;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-lg);
+  max-width: 400px;
+}
+
+.search-section label {
+  font-weight: 600;
+  color: var(--color-dark-brown);
+}
+
+.search-input {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--color-muted-rose);
+  border-radius: 4px;
+  background: white;
+  width: 100%;
+  font-size: 14px;
+  color: var(--color-dark-brown);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-dark-brown);
+  box-shadow: 0 0 0 3px rgba(55, 33, 16, 0.1);
+}
+
+.form-section {
+  margin-bottom: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.table-section {
+  margin-top: var(--spacing-lg);
+}
+
+.table-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.table-header-row h2 {
+  margin: 0;
+}
+
+.help-button {
+  background-color: var(--color-blue);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.help-button:hover {
+  background-color: #4a7cc4;
+  transform: scale(1.05);
+}
+
+.action-section {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.plain-button {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--color-dark-brown);
+  border-radius: 4px;
+  background: white;
+  color: var(--color-dark-brown);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.plain-button-alt {
+  background: var(--color-rose-light);
+  border-color: var(--color-muted-rose);
+  padding: var(--spacing-xs) var(--spacing-sm);
+}

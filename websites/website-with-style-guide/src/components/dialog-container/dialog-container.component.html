@@ -1,0 +1,31 @@
+<p-dialog
+  *ngFor="let dialog of dialogs"
+  styleClass="sg-dialog"
+  [visible]="true"
+  [header]="dialog.title"
+  [modal]="true"
+  [closable]="true"
+  [baseZIndex]="1300"
+  (onHide)="cancel(dialog)"
+>
+  <div class="dialog-body" [class.dialog-body-confirm]="dialog.type === 'confirm'">
+    <i [class]="getDialogIcon(dialog)" aria-hidden="true"></i>
+    <p class="dialog-message">{{ dialog.message }}</p>
+  </div>
+
+  <ng-template pTemplate="footer">
+    <p-button
+      *ngIf="dialog.cancelText"
+      [label]="dialog.cancelText"
+      icon="pi pi-times"
+      styleClass="sg-button-cancel"
+      (onClick)="cancel(dialog)"
+    ></p-button>
+    <p-button
+      [label]="dialog.confirmText"
+      [icon]="getConfirmIcon(dialog)"
+      [styleClass]="getConfirmStyle(dialog)"
+      (onClick)="confirm(dialog)"
+    ></p-button>
+  </ng-template>
+</p-dialog>

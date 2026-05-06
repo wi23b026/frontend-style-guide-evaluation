@@ -1,0 +1,667 @@
+<section id="components" class="sg-section">
+  <h2>Components</h2>
+
+  <div class="sg-guidelines">
+    <h3>General Component Principles</h3>
+    <ul>
+      <li>Only approved UI components may be used</li>
+      <li>Behaviour, usage and appearance must be standardised</li>
+      <li>Component size and interaction patterns are predefined</li>
+      <li>Visual examples define correct usage</li>
+      <li>Consistent handling across all UI elements is required</li>
+      <li>System feedback must be visible through defined hover, focus, active, disabled, loading, validation and status states</li>
+      <li>Error handling must use clear messages, accessible state attributes and safe recovery actions</li>
+      <li>Status indicators must combine icon, colour and text so meaning never depends on colour alone</li>
+      <li>Developers should use the documented styleClass values exactly as shown in examples</li>
+    </ul>
+  </div>
+
+  <div class="sg-guidelines">
+    <h3>Approved Component Catalogue</h3>
+    <ul>
+      <li>Buttons: PrimeNG p-button with sg-button-primary, sg-button-primary-inverted, sg-button-save, sg-button-cancel or sg-button-dark</li>
+      <li>Dropdowns: PrimeNG p-select with sg-select and sg-select-panel</li>
+      <li>Tables: PrimeNG p-table with sg-table</li>
+      <li>Inputs: PrimeNG pInputText with sg-input and validation classes when needed</li>
+      <li>Cards: approved content card pattern with sg-card classes</li>
+      <li>Accordions: PrimeNG p-accordion pattern for expandable content groups</li>
+      <li>Tabs: PrimeNG p-tabs pattern for switching between related views</li>
+      <li>Notifications: shared toast/alert pattern with icon, colour and text</li>
+      <li>Navigation: approved navbar/menu pattern with semantic nav markup</li>
+      <li>Dialogs: PrimeNG p-dialog with sg-dialog</li>
+      <li>Icons: PrimeIcons only</li>
+      <li>Autocomplete: approved custom input plus suggestion dropdown pattern when PrimeNG p-autoComplete is not used</li>
+    </ul>
+  </div>
+
+  <section class="sg-subsection">
+    <h3>Buttons</h3>
+    <div class="sg-guidelines">
+      <h4>Usage</h4>
+      <p>Primary interaction element for actions.</p>
+    </div>
+
+    <div class="components-demo table-demo">
+      <h4>Example</h4>
+      <div class="button-examples">
+        <div class="button-state-group">
+          <h5>Normal State (Active / Focus / Disabled)</h5>
+          <div class="button-group">
+            <p-button label="Normal" icon="pi pi-arrow-right" styleClass="sg-button-primary"></p-button>
+            <p-button label="Normal" icon="pi pi-arrow-right" styleClass="sg-button-primary sg-button-focus-demo"></p-button>
+            <p-button label="Normal" icon="pi pi-arrow-right" styleClass="sg-button-primary" [disabled]="true"></p-button>
+          </div>
+          <div class="button-group mt-3">
+            <p-button label="Normal" icon="pi pi-arrow-right" styleClass="sg-button-primary-inverted"></p-button>
+            <p-button label="Normal" icon="pi pi-arrow-right" styleClass="sg-button-primary-inverted sg-button-focus-demo"></p-button>
+            <p-button label="Normal" icon="pi pi-arrow-right" styleClass="sg-button-primary-inverted" [disabled]="true"></p-button>
+          </div>
+        </div>
+        <div class="button-state-group">
+          <h5>Save State (Active / Focus / Disabled)</h5>
+          <div class="button-group">
+            <p-button label="Save" icon="pi pi-check" styleClass="sg-button-save"></p-button>
+            <p-button label="Save" icon="pi pi-check" styleClass="sg-button-save sg-button-focus-demo"></p-button>
+            <p-button label="Save" icon="pi pi-check" styleClass="sg-button-save" [disabled]="true"></p-button>
+          </div>
+        </div>
+
+        <div class="button-state-group">
+          <h5>Cancel State (Active / Focus / Disabled)</h5>
+          <div class="button-group">
+            <p-button label="Cancel" icon="pi pi-times" styleClass="sg-button-cancel"></p-button>
+            <p-button label="Cancel" icon="pi pi-times" styleClass="sg-button-cancel sg-button-focus-demo"></p-button>
+            <p-button label="Cancel" icon="pi pi-times" styleClass="sg-button-cancel" [disabled]="true"></p-button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>PrimeNG p-button only</li>
+        <li>Buttons must be rectangular only; circular or fully rounded icon buttons are not allowed</li>
+        <li>Normal state: white background (#FFFFFF) with dark brown border and text (#372110) for primary actions</li>
+        <li>Normal inverted state: dark brown background (#372110) with white text (#FFFFFF) for high-emphasis primary actions on light surfaces</li>
+        <li>Save state: green background (#6FCF97) with white text for committing changes</li>
+        <li>Cancel state: red background (#E85C5C) with white text for dismissive actions</li>
+        <li>Icon-to-text gap: 0.5rem</li>
+        <li>Padding left/right: 1rem</li>
+        <li>Padding bottom per state group: 1rem</li>
+        <li>Margin between buttons: 1rem</li>
+        <li>Margin between button state groups: 1.5rem</li>
+        <li>0.5rem border radius for all buttons</li>
+        <li>Minimum height: 2.75rem</li>
+        <li>Size: text buttons use content width with 1rem horizontal padding; icon-only buttons use 2.75rem by 2.75rem</li>
+        <li>Responsive behaviour: button groups wrap on medium viewports and stack full-width on narrow form layouts</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-subsection">
+    <h3>Cards</h3>
+    <div class="sg-guidelines">
+      <h4>Usage</h4>
+      <p>Compact content container for grouped summary information.</p>
+    </div>
+
+    <div class="components-demo">
+      <h4>Example</h4>
+      <div class="sg-card">
+        <div class="sg-card-header">Taiyaki Overview</div>
+        <div class="sg-card-content">
+          <span class="sg-card-value">3</span>
+          <span class="sg-card-label">Total products</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>Use cards only for grouped summary or repeated item content</li>
+        <li>Do not place page sections inside decorative cards</li>
+        <li>Border radius: 0.5rem maximum</li>
+        <li>Use visible heading, content and optional action areas</li>
+        <li>Cards must not contain other cards</li>
+        <li>Size: cards fill their parent container up to the page content width and use at least 1.5rem internal padding</li>
+        <li>Responsive behaviour: repeated cards use a responsive grid and collapse to one column on narrow viewports</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-subsection">
+    <h3>Tables</h3>
+    <div class="sg-guidelines">
+      <h4>Usage</h4>
+      <p>Structured display for product data, records, and comparable information.</p>
+    </div>
+
+    <div class="components-demo">
+      <h4>Example</h4>
+      <p-table styleClass="sg-table" [value]="sampleData" [rowHover]="true" [tableStyle]="{ 'min-width': '40rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+          <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.category }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>Header background: sand light (#FFEDE0) with primary-light bottom border</li>
+        <li>Row background: odd rows white, even rows light orange (#fff8f2)</li>
+        <li>Hover background: white rows change to #fff8f2; even rows keep #fff8f2</li>
+        <li>Standard table actions appear in the final column</li>
+        <li>Empty tables must show a visible empty state message</li>
+        <li>Cell padding: 1rem</li>
+        <li>Border radius: 0.5rem on the table wrapper</li>
+        <li>Size: table columns use content-based widths with a minimum table width of 40rem when several columns are shown</li>
+        <li>Filtering: use PrimeNG p-table filtering APIs, such as column filters or global filter fields, instead of custom DOM filtering</li>
+        <li>Sorting and pagination: use PrimeNG p-table inputs and templates when needed</li>
+        <li>Responsive behaviour: table wrapper allows horizontal scrolling for narrow viewports</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-subsection">
+    <h3>Accordions</h3>
+    <div class="sg-guidelines">
+      <h4>Usage</h4>
+      <p>Expandable groups for secondary information that does not need to be visible all at once.</p>
+    </div>
+
+    <div class="components-demo">
+      <h4>Example</h4>
+      <div class="accordion-demo">
+        <button
+          class="accordion-header"
+          type="button"
+          [attr.aria-expanded]="accordionOpen"
+          aria-controls="accordion-product-details"
+          (click)="toggleAccordion()"
+        >
+          <span>Product details</span>
+          <i [class]="accordionOpen ? 'pi pi-chevron-up' : 'pi pi-chevron-down'" aria-hidden="true"></i>
+        </button>
+        @if (accordionOpen) {
+          <div id="accordion-product-details" class="accordion-panel">
+            Ingredients, availability and preparation notes appear inside the expanded panel.
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>Use the PrimeNG accordion pattern for implementation</li>
+        <li>Headers must be keyboard reachable and show a visible focus state</li>
+        <li>Use chevron icons to communicate expanded or collapsed state</li>
+        <li>Accordion content should be secondary, not required for completing the main task</li>
+        <li>Use aria-expanded or the equivalent PrimeNG accessibility behaviour</li>
+        <li>Size: accordion headers use a minimum height of 2.75rem and panels use 1rem internal padding</li>
+        <li>Responsive behaviour: accordion width follows the parent container and long header text wraps without hiding the chevron</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-subsection">
+    <h3>Tabs</h3>
+    <div class="sg-guidelines">
+      <h4>Usage</h4>
+      <p>Switch between related views on the same page without changing navigation context.</p>
+    </div>
+
+    <div class="components-demo">
+      <h4>Example</h4>
+      <div class="tabs-demo">
+        <div class="tabs-list" role="tablist" aria-label="Product views">
+          <button
+            class="tab-item"
+            [class.tab-item-active]="activeTab === 'products'"
+            type="button"
+            role="tab"
+            [attr.aria-selected]="activeTab === 'products'"
+            aria-controls="tab-panel-products"
+            (click)="setActiveTab('products')"
+          >
+            Products
+          </button>
+          <button
+            class="tab-item"
+            [class.tab-item-active]="activeTab === 'categories'"
+            type="button"
+            role="tab"
+            [attr.aria-selected]="activeTab === 'categories'"
+            aria-controls="tab-panel-categories"
+            (click)="setActiveTab('categories')"
+          >
+            Categories
+          </button>
+          <button
+            class="tab-item"
+            [class.tab-item-active]="activeTab === 'history'"
+            type="button"
+            role="tab"
+            [attr.aria-selected]="activeTab === 'history'"
+            aria-controls="tab-panel-history"
+            (click)="setActiveTab('history')"
+          >
+            History
+          </button>
+        </div>
+        <div class="tab-panel" role="tabpanel" [id]="'tab-panel-' + activeTab">
+          {{ tabContent[activeTab] }}
+        </div>
+      </div>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>Use the PrimeNG tabs pattern for implementation</li>
+        <li>Tabs are for peer-level views, not step-by-step processes</li>
+        <li>Active tab must be visually distinct and announced with aria-selected or equivalent behaviour</li>
+        <li>Tab labels must follow the wording rules</li>
+        <li>Do not use tabs when standard page navigation is clearer</li>
+        <li>Size: tab controls use a minimum height of 2.75rem and at least 1rem horizontal padding</li>
+        <li>Responsive behaviour: tab lists scroll horizontally or wrap when labels do not fit; tab panels keep full parent width</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-subsection">
+    <h3>Dropdowns</h3>
+    <div class="sg-guidelines">
+      <h4>Usage</h4>
+      <p>Selection control for choosing one option from a predefined list.</p>
+    </div>
+
+    <div class="components-demo">
+      <h4>Example</h4>
+      <p-select
+        styleClass="sg-select"
+        panelStyleClass="sg-select-panel"
+        [options]="countries"
+        [(ngModel)]="selectedCountry"
+        optionLabel="label"
+        placeholder="Select a country"
+        appendTo="body"
+      ></p-select>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>Component: PrimeNG p-select only</li>
+        <li>Dropdowns must use the same closed control and overlay pattern everywhere</li>
+        <li>Closed state: white background, neutral border, dark brown text</li>
+        <li>Open/Focus state: accent red border with visible focus ring</li>
+        <li>Overlay background: white with 0.5rem border radius and visible shadow</li>
+        <li>Option hover/focus: sand-light background</li>
+        <li>Selected option: primary-light background with dark brown text</li>
+        <li>Minimum height: 2.75rem</li>
+        <li>Size: closed dropdowns fill their form column and should not be narrower than 12rem</li>
+        <li>Responsive behaviour: dropdown overlays align to the input width and remain usable on narrow viewports</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-subsection">
+    <h3>Autocomplete</h3>
+    <div class="sg-guidelines">
+      <h4>Usage</h4>
+      <p>Text input with visible suggestions for known values such as product names or searchable labels.</p>
+    </div>
+
+    <div class="components-demo">
+      <h4>Example</h4>
+      <div class="autocomplete-demo">
+        <input class="sg-input" type="text" pInputText value="Tai" aria-describedby="autocomplete-help" />
+        <div class="autocomplete-panel" role="listbox">
+          <div role="option">Red Bean Taiyaki</div>
+          <div role="option">Custard Taiyaki</div>
+          <div role="option">Matcha Taiyaki</div>
+        </div>
+        <small id="autocomplete-help" class="input-message input-message-info">
+          Suggestions appear below the input and can scroll when more than five options are available.
+        </small>
+      </div>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>Suggestions are shown in a dropdown directly below the input</li>
+        <li>Show suggestions while the input is focused or while the user types</li>
+        <li>Limit the visible list to five suggestions, then make the panel scrollable</li>
+        <li>Keyboard support must include ArrowDown, ArrowUp, Enter and Escape</li>
+        <li>Empty suggestion lists should not open an empty panel</li>
+        <li>The input must keep a visible label and use aria-describedby for helper or error text</li>
+        <li>Size: autocomplete inputs follow input field sizing; suggestion panels match the input width with a maximum visible height of five options</li>
+        <li>Responsive behaviour: suggestion panels stay attached below the input and scroll internally instead of extending past the viewport</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-subsection">
+    <h3>Input Fields</h3>
+    <div class="sg-guidelines">
+      <h4>Usage</h4>
+      <p>Text entry for forms, search, authentication, and editable user input.</p>
+    </div>
+
+    <div class="components-demo">
+      <h4>Example</h4>
+      <div class="input-examples">
+        <input class="sg-input" type="text" pInputText placeholder="Enter text..." />
+
+        <div>
+          <input
+            class="sg-input sg-input-error"
+            type="text"
+            pInputText
+            value="Invalid value"
+            aria-invalid="true"
+            aria-describedby="input-example-error"
+          />
+          <small id="input-example-error" class="input-message input-message-error">Please enter a valid value.</small>
+        </div>
+
+        <div>
+          <input
+            class="sg-input sg-input-success"
+            type="text"
+            pInputText
+            value="Valid value"
+            aria-describedby="input-example-success"
+          />
+          <small id="input-example-success" class="input-message input-message-success">Input accepted.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>Default state: neutral border and placeholder text for empty or editable input</li>
+        <li>Error state: red border, aria-invalid attribute, and a clear validation message</li>
+        <li>Success state: green border and confirmation message after valid input</li>
+        <li>Used for forms, search, authentication, and editable text fields</li>
+        <li>Clear focus, validation, and helper messaging are required</li>
+        <li>Size: inputs use a minimum height of 2.75rem, fill their form column and should not be narrower than 12rem</li>
+        <li>Responsive behaviour: multi-column forms collapse to fewer columns and then one column on narrow viewports</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-subsection">
+    <h3>Notifications / Alerts / Toasts</h3>
+    <div class="sg-guidelines">
+      <h4>Usage</h4>
+      <p>Temporary or persistent feedback after system actions.</p>
+    </div>
+
+    <div class="components-demo">
+      <h4>Example</h4>
+      <div class="toast-stack">
+        <div class="feedback-message feedback-success" role="status">
+          <i class="pi pi-check-circle" aria-hidden="true"></i>
+          <span>Product saved successfully.</span>
+        </div>
+        <div class="feedback-message feedback-error" role="alert">
+          <i class="pi pi-times-circle" aria-hidden="true"></i>
+          <span>Product could not be deleted. Try again.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>Use shared notification services so messages behave consistently</li>
+        <li>Success, warning, error and information states must combine icon, colour and text</li>
+        <li>Use role="status" for passive updates and role="alert" for urgent errors</li>
+        <li>Notification text must follow the wording rules</li>
+        <li>Dismiss controls must have accessible labels when shown</li>
+        <li>Size: notifications use content height, 1rem padding and a maximum width of 25rem</li>
+        <li>Responsive behaviour: notifications fit within the viewport width and stack vertically with consistent spacing</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-subsection">
+    <h3>Navigation / Menus / Navbar</h3>
+    <div class="sg-guidelines">
+      <h4>Usage</h4>
+      <p>Global and local navigation that helps users understand where they are and where they can go.</p>
+    </div>
+
+    <div class="components-demo">
+      <h4>Example</h4>
+      <nav class="navbar-demo" aria-label="Example navigation">
+        <span class="navbar-demo-brand">TAIYAKI SHOP</span>
+        <a href="#components">Products</a>
+        <a href="#components">Users</a>
+        <button class="navbar-demo-action" type="button" aria-label="Profile">
+          <i class="pi pi-user" aria-hidden="true"></i>
+        </button>
+      </nav>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>Use semantic nav landmarks with accessible labels</li>
+        <li>Global navigation appears at the top of every application page</li>
+        <li>Navigation labels must follow the wording rules</li>
+        <li>Active or focused items must be visually clear</li>
+        <li>Icon-only navigation actions require aria-label</li>
+        <li>Size: global navigation uses a minimum height of 5rem; nav links and icon actions use a minimum height of 2.75rem</li>
+        <li>Responsive behaviour: brand remains first, navigation actions align to the right on desktop and wrap or stack below the brand on narrow viewports</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-subsection">
+    <h3>Dialogs / Modals</h3>
+    <div class="sg-guidelines">
+      <h4>Usage</h4>
+      <p>Temporary focused surfaces for confirmations, short forms, and important contextual content.</p>
+    </div>
+
+    <div class="components-demo">
+      <h4>Example</h4>
+      <p-button label="Open Dialog" (onClick)="displayDialog()" styleClass="sg-button-primary"></p-button>
+
+      <p-dialog styleClass="sg-dialog sg-demo-dialog" [(visible)]="showDialog" header="Modal Example" [modal]="true">
+        <h4>Dialog Content</h4>
+        <p>This is an example dialog/modal component.</p>
+        <ng-template pTemplate="footer">
+          <p-button label="Close" (onClick)="showDialog = false" styleClass="sg-button-dark"></p-button>
+        </ng-template>
+      </p-dialog>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>Focus trap required</li>
+        <li>Keyboard (ESC) support required</li>
+        <li>Clear structure (header, content, actions)</li>
+        <li>Size: dialogs use a maximum width of 32rem for confirmations and short forms, with 1.5rem content padding</li>
+        <li>Responsive behaviour: dialogs shrink to fit narrow viewports with visible margins and scroll internally when content is taller than the viewport</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-subsection">
+    <h3>Error Handling & Validation</h3>
+    <div class="sg-guidelines">
+      <h4>Usage</h4>
+      <p>Validation prevents avoidable mistakes and explains how users can fix invalid input.</p>
+    </div>
+
+    <div class="components-demo">
+      <h4>Example</h4>
+      <div class="input-examples">
+        <div>
+          <label class="demo-label" for="error-demo-price">Price</label>
+          <input
+            id="error-demo-price"
+            class="sg-input sg-input-error"
+            type="text"
+            pInputText
+            value="-4.50"
+            aria-invalid="true"
+            aria-describedby="error-demo-price-message"
+          />
+          <small id="error-demo-price-message" class="input-message input-message-error">
+            Price must be 0 or higher.
+          </small>
+        </div>
+
+        <div>
+          <label class="demo-label" for="success-demo-name">Product name</label>
+          <input
+            id="success-demo-name"
+            class="sg-input sg-input-success"
+            type="text"
+            pInputText
+            value="Custard Taiyaki"
+            aria-describedby="success-demo-name-message"
+          />
+          <small id="success-demo-name-message" class="input-message input-message-success">
+            Product name accepted.
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>Required actions should be disabled until required input is present</li>
+        <li>Error messages must follow the wording rules</li>
+        <li>Fields with errors must use aria-invalid="true" and connect messages with aria-describedby</li>
+        <li>Validation should happen close to the field that needs attention</li>
+        <li>Users must be able to cancel, close, or safely recover from interrupted processes</li>
+        <li>Size: validation messages use small text and sit directly below the related control without changing the control height</li>
+        <li>Responsive behaviour: validation messages wrap inside the field column and remain visible when forms collapse to one column</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-subsection">
+    <h3>Status Indicators</h3>
+    <div class="sg-guidelines">
+      <h4>Usage</h4>
+      <p>Status indicators communicate system or item state without relying on colour alone.</p>
+    </div>
+
+    <div class="components-demo">
+      <h4>Example</h4>
+      <div class="status-grid">
+        <div class="status-indicator status-success">
+          <i class="pi pi-check-circle" aria-hidden="true"></i>
+          <span>Success</span>
+        </div>
+        <div class="status-indicator status-warning">
+          <i class="pi pi-exclamation-triangle" aria-hidden="true"></i>
+          <span>Warning</span>
+        </div>
+        <div class="status-indicator status-error">
+          <i class="pi pi-times-circle" aria-hidden="true"></i>
+          <span>Error</span>
+        </div>
+        <div class="status-indicator status-info">
+          <i class="pi pi-info-circle" aria-hidden="true"></i>
+          <span>Information</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>Use one PrimeIcon, one approved colour and one visible text label</li>
+        <li>Green means success, orange means warning, red means error, blue means information</li>
+        <li>Do not communicate status through colour alone</li>
+        <li>Status labels must follow the wording rules</li>
+        <li>Size: status indicators use a minimum height of 1.75rem with compact horizontal padding</li>
+        <li>Responsive behaviour: status labels wrap only when necessary and remain paired with their icon</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-subsection">
+    <h3>Safe Interaction Patterns</h3>
+    <div class="sg-guidelines">
+      <h4>Usage</h4>
+      <p>Safe interaction patterns help users avoid mistakes and leave a process without losing control.</p>
+    </div>
+
+    <div class="components-demo">
+      <h4>Example</h4>
+      <div class="button-group">
+        <p-button label="Save" icon="pi pi-check" styleClass="sg-button-save"></p-button>
+        <p-button label="Cancel" icon="pi pi-times" styleClass="sg-button-cancel"></p-button>
+        <p-button label="Delete" icon="pi pi-trash" styleClass="sg-button-cancel"></p-button>
+      </div>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>Destructive actions must be visually distinct and require confirmation when data will be lost</li>
+        <li>Cancel or close actions must be visible when users are inside a process</li>
+        <li>Disabled actions must only be used when the required conditions are not met</li>
+        <li>Interfaces should show only necessary actions for the current context</li>
+        <li>Size: safe action groups use the standard button sizes and keep at least 1rem between actions</li>
+        <li>Responsive behaviour: action groups keep primary and destructive actions visible, wrapping or stacking without changing action order</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sg-subsection">
+    <h3>Icons</h3>
+    <div class="sg-guidelines">
+      <h4>Usage</h4>
+      <p>Visual support for status, feedback and navigation.</p>
+    </div>
+
+    <div class="components-demo">
+      <h4>Example</h4>
+      <div class="icon-grid">
+        <div><i class="pi pi-check status-icon status-icon-success"></i><span>Success</span></div>
+        <div><i class="pi pi-exclamation-triangle status-icon status-icon-warning"></i><span>Warning</span></div>
+        <div><i class="pi pi-times status-icon status-icon-error"></i><span>Error</span></div>
+        <div><i class="pi pi-info-circle status-icon status-icon-info"></i><span>Info</span></div>
+      </div>
+    </div>
+
+    <div class="sg-guidelines">
+      <h4>Characteristics</h4>
+      <ul>
+        <li>Single icon library only (PrimeIcons)</li>
+        <li>House-owned custom icons are reserved for the logo and brand assets only</li>
+        <li>Consistent icon style required</li>
+        <li>Size: standard icons use 1rem inside text flows and 1.25rem to 1.5rem for standalone status use</li>
+        <li>Responsive behaviour: headings wrap naturally without viewport-based font scaling, and icons stay aligned with their text labels</li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,58 @@
+<div class="product-form">
+  <div class="field-row">
+    <label for="name">Product name</label>
+    <app-autocomplete
+      [suggestions]="productNameSuggestions"
+      [value]="name"
+      (valueChange)="name = $event"
+      placeholder="Enter or search product name"
+      [class.error]="hasError('name')"
+    ></app-autocomplete>
+  </div>
+  <div class="field-row">
+    <label for="price">Price</label>
+    <input
+      id="price"
+      type="number"
+      [(ngModel)]="price"
+      placeholder="Enter price"
+      [class.error]="hasError('price')"
+    />
+    <span *ngIf="hasError('price')" class="error-message">{{ getError('price') }}</span>
+  </div>
+
+  <div class="field-row">
+    <label for="category">Category</label>
+    <select 
+      id="category" 
+      [(ngModel)]="category"
+      [class.error]="hasError('category')"
+    >
+      <option value="">Select category</option>
+      <option value="Sweet">Sweet</option>
+      <option value="Herb">Herb</option>
+      <option value="Classic">Classic</option>
+      <option value="Seasonal">Seasonal</option>
+    </select>
+    <span *ngIf="hasError('category')" class="error-message">{{ getError('category') }}</span>
+  </div>
+
+  <div class="field-row">
+    <label for="rating">Rating</label>
+    <input
+      id="rating"
+      type="number"
+      min="0"
+      max="5"
+      [(ngModel)]="rating"
+      placeholder="0-5"
+      [class.error]="hasError('rating')"
+    />
+    <span *ngIf="hasError('rating')" class="error-message">{{ getError('rating') }}</span>
+  </div>
+
+  <div class="form-actions">
+    <button type="button" (click)="submitForm()" class="form-button">{{ editingProduct ? 'Update Product' : 'Add Product' }}</button>
+    <button type="button" (click)="cancelForm()" class="form-button-secondary">Cancel</button>
+  </div>
+</div>

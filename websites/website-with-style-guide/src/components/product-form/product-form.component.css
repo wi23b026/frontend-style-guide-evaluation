@@ -1,0 +1,58 @@
+.product-form {
+  background-color: #ffffff;
+  border: 0.0625rem solid var(--color-primary-light);
+  border-radius: 0.5rem;
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(4, minmax(12rem, 1fr));
+  padding: var(--space-3);
+}
+
+.field-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.field-row label {
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--space-2);
+  grid-column: 1 / -1;
+}
+
+.form-feedback {
+  display: grid;
+  gap: var(--space-1);
+  grid-column: 1 / -1;
+}
+
+.input-message-info {
+  align-items: center;
+  color: var(--color-info-text);
+  display: inline-flex;
+  gap: var(--space-1);
+  margin: 0;
+}
+
+@media (max-width: 64rem) {
+  .product-form {
+    grid-template-columns: repeat(2, minmax(12rem, 1fr));
+  }
+}
+
+@media (max-width: 40rem) {
+  .product-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+}

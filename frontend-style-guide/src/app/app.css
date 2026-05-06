@@ -1,0 +1,430 @@
+/* TAIYAKI SHOP Style Guide Component Styles */
+
+.style-guide-header {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-sand-light) 100%);
+  padding: var(--space-5) var(--space-2);
+  text-align: center;
+  border-bottom: 0.25rem solid var(--color-primary-dark);
+  margin-bottom: var(--space-5);
+}
+
+.style-guide-header h1 {
+  color: var(--color-primary-dark);
+  margin: 0;
+  font-size: var(--font-size-h1);
+}
+
+.style-guide-header .subtitle {
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-body);
+  font-weight: 300;
+}
+
+.style-guide-wrapper {
+  display: flex;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+  gap: var(--space-3);
+}
+
+.style-guide-nav {
+  width: 13.75rem;
+  position: sticky;
+  top: var(--space-2);
+  height: fit-content;
+  background-color: var(--color-sand-light);
+  padding: var(--space-3);
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+}
+
+.style-guide-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.style-guide-nav li {
+  margin: 0;
+  margin-bottom: var(--space-2);
+}
+
+.style-guide-nav a {
+  display: block;
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  padding: var(--space-1) var(--space-2);
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+  font-size: var(--font-size-small);
+}
+
+.style-guide-nav a:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+.style-guide-content {
+  flex: 1;
+  padding-bottom: var(--space-5);
+}
+
+/* Sections */
+.sg-section {
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 0.0625rem solid #e0e0e0;
+}
+
+.sg-subsection {
+  margin-top: var(--space-4);
+  padding: var(--space-3);
+  background-color: var(--color-sand-light);
+  border-radius: 0.5rem;
+  border-left: 0.25rem solid var(--color-primary-light);
+}
+
+.sg-guidelines {
+  margin: var(--space-3) 0;
+  padding: var(--space-3);
+  background-color: #f9f9f9;
+  border-radius: 0.25rem;
+  border-left: 0.1875rem solid #FAA2A2;
+}
+
+/* Color Swatches */
+.color-group {
+  margin: var(--space-3) 0;
+}
+
+.color-group h4 {
+  margin-bottom: var(--space-2);
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-body);
+}
+
+.colors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr));
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.color-swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-1);
+}
+
+.color-swatch .swatch {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 0.5rem;
+  border: 0.0625rem solid #ddd;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.color-swatch .swatch:hover {
+  transform: scale(1.05);
+}
+
+.color-swatch .label {
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+.color-swatch .code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+/* Typography Examples */
+.text-h2 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h2);
+  margin: var(--space-3) 0 var(--space-2) 0;
+}
+
+.text-h3 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h3);
+  margin: var(--space-2) 0;
+}
+
+.text-body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  margin: var(--space-2) 0;
+}
+
+.text-small {
+  font-family: var(--font-body);
+  font-size: var(--font-size-small);
+  margin: var(--space-2) 0;
+  color: #666;
+}
+
+/* Spacing Grid */
+.spacing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.375rem, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-3) 0;
+}
+
+.spacing-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  align-items: center;
+}
+
+.space-demo {
+  width: 100%;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid #ddd;
+}
+
+.spacing-item span {
+  font-size: var(--font-size-small);
+  color: var(--color-primary-dark);
+  font-weight: 500;
+}
+
+/* Logo Examples */
+.logo-examples {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.logo-example-group h5 {
+  color: var(--color-primary-dark);
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.logo-size-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11.25rem, 1fr));
+  gap: var(--space-2);
+}
+
+.logo-example {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  min-height: 11.25rem;
+  padding: var(--space-3);
+  background-color: var(--color-sand-light);
+  border: 0.0625rem solid #eee;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.logo-example img {
+  display: block;
+  height: auto;
+  margin: auto;
+  object-fit: contain;
+}
+
+.logo-size-large {
+  width: 15rem;
+  max-width: 100%;
+}
+
+.logo-size-medium {
+  width: 10rem;
+  max-width: 100%;
+}
+
+.logo-size-minimum {
+  width: 7.5rem;
+  max-width: 100%;
+}
+
+.logo-example span {
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  margin-top: auto;
+}
+
+/* Components Demo */
+.components-demo {
+  margin: var(--space-3) 0;
+  padding: var(--space-3);
+  background-color: #ffffff;
+  border: 0.0625rem solid #ddd;
+  border-left: 0.1875rem solid #FAA2A2;
+  border-radius: 0.5rem;
+  overflow: visible;
+}
+
+.table-demo {
+  overflow-x: auto;
+}
+
+.components-demo h4 {
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+  color: var(--color-primary-dark);
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.button-examples {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.button-state-group {
+  border-bottom: 0.0625rem solid #eee;
+  padding-bottom: var(--space-2);
+}
+
+.button-state-group:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.button-state-group h5 {
+  color: var(--color-primary-dark);
+  font-family: var(--font-body);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.button-state-group .button-group {
+  margin-bottom: 0;
+}
+
+.input-examples {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.input-message {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--font-size-small);
+}
+
+.input-message-error {
+  color: var(--color-accent-red);
+}
+
+.input-message-success {
+  color: var(--color-accent-green);
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-2) 0;
+}
+
+.icon-grid div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  text-align: center;
+  padding: var(--space-2);
+  background-color: #ffffff;
+  border: 0.0625rem solid #eee;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.icon-grid div:hover {
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0.5rem 1.25rem rgba(55, 33, 16, 0.1);
+  transform: translateY(-0.125rem);
+}
+
+.icon-grid span {
+  font-size: var(--font-size-small);
+  color: var(--color-primary-dark);
+  font-weight: 500;
+}
+
+/* Code Blocks */
+pre {
+  background-color: #f5f5f5;
+  padding: var(--space-2);
+  border-radius: 0.25rem;
+  overflow-x: auto;
+  border-left: 0.1875rem solid #FAA2A2;
+}
+
+pre code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8125rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Footer */
+.sg-footer {
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 0.0625rem solid #e0e0e0;
+  text-align: center;
+  color: #999;
+  font-size: var(--font-size-small);
+}
+
+/* Responsive */
+@media (max-width: 48rem) {
+  .style-guide-wrapper {
+    flex-direction: column;
+  }
+
+  .style-guide-nav {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+
+  .colors-grid,
+  .spacing-grid,
+  .icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 30rem) {
+  .style-guide-header h1 {
+    font-size: var(--font-size-h2);
+  }
+
+  .colors-grid,
+  .spacing-grid,
+  .icon-grid {
+    grid-template-columns: 1fr;
+  }
+}

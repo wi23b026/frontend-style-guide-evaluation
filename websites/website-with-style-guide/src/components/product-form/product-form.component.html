@@ -1,0 +1,108 @@
+<div class="product-form">
+  <div class="field-row">
+    <label for="name">Product name</label>
+    <app-autocomplete
+      inputId="name"
+      [suggestions]="productNameSuggestions"
+      [value]="name"
+      (valueChange)="name = $event"
+      placeholder="Enter or search product name"
+      [invalid]="hasError('name')"
+      [describedBy]="getFieldMessageId('name')"
+    ></app-autocomplete>
+    <small *ngIf="hasError('name')" id="name-message" class="input-message input-message-error">
+      {{ getError('name') }}
+    </small>
+  </div>
+
+  <div class="field-row">
+    <label for="price">Price</label>
+    <input
+      id="price"
+      class="sg-input"
+      type="number"
+      pInputText
+      [(ngModel)]="price"
+      placeholder="Enter price"
+      [class.sg-input-error]="hasError('price')"
+      [attr.aria-invalid]="hasError('price')"
+      [attr.aria-describedby]="getFieldMessageId('price')"
+    />
+    <small *ngIf="hasError('price')" id="price-message" class="input-message input-message-error">
+      {{ getError('price') }}
+    </small>
+  </div>
+
+  <div class="field-row">
+    <label for="category">Category</label>
+    <p-select
+      inputId="category"
+      styleClass="sg-select"
+      panelStyleClass="sg-select-panel"
+      [options]="categoryOptions"
+      [(ngModel)]="category"
+      optionLabel="label"
+      optionValue="value"
+      placeholder="Select category"
+      appendTo="body"
+      [class.sg-input-error]="hasError('category')"
+      [attr.aria-invalid]="hasError('category')"
+      [attr.aria-describedby]="getFieldMessageId('category')"
+    ></p-select>
+    <small *ngIf="hasError('category')" id="category-message" class="input-message input-message-error">
+      {{ getError('category') }}
+    </small>
+  </div>
+
+  <div class="field-row">
+    <label for="rating">Rating</label>
+    <input
+      id="rating"
+      class="sg-input"
+      type="number"
+      pInputText
+      min="0"
+      max="5"
+      [(ngModel)]="rating"
+      placeholder="0-5"
+      [class.sg-input-error]="hasError('rating')"
+      [attr.aria-invalid]="hasError('rating')"
+      [attr.aria-describedby]="getFieldMessageId('rating')"
+    />
+    <small *ngIf="hasError('rating')" id="rating-message" class="input-message input-message-error">
+      {{ getError('rating') }}
+    </small>
+  </div>
+
+  <div class="form-actions">
+    <p-button
+      type="button"
+      [label]="editingProduct ? 'Update Product' : 'Add Product'"
+      icon="pi pi-check"
+      styleClass="sg-button-save"
+      [disabled]="hasMissingRequiredFields"
+      [attr.aria-describedby]="hasMissingRequiredFields ? 'save-disabled-message' : null"
+      (onClick)="submitForm()"
+    ></p-button>
+    <p-button
+      type="button"
+      label="Cancel"
+      icon="pi pi-times"
+      styleClass="sg-button-cancel"
+      [disabled]="hasNothingToCancel"
+      [attr.aria-describedby]="hasNothingToCancel ? 'cancel-disabled-message' : null"
+      (onClick)="cancelForm()"
+    ></p-button>
+  </div>
+
+  <div class="form-feedback" aria-live="polite">
+    <p *ngIf="saveDisabledReason" id="save-disabled-message" class="input-message input-message-info">
+      <i class="pi pi-info-circle" aria-hidden="true"></i>
+      <span>{{ saveDisabledReason }}</span>
+    </p>
+    <p *ngIf="cancelDisabledReason" id="cancel-disabled-message" class="input-message input-message-info">
+      <i class="pi pi-info-circle" aria-hidden="true"></i>
+      <span>{{ cancelDisabledReason }}</span>
+    </p>
+  </div>
+</div>

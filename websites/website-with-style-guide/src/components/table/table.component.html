@@ -1,0 +1,61 @@
+<div class="table-wrapper">
+  <p-table
+    styleClass="sg-table product-table"
+    [value]="products"
+    [rowHover]="true"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th class="actions-header">Actions</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td class="name-cell">{{ product.name }}</td>
+        <td>
+          <span class="status-pill">
+            <i class="pi pi-tag" aria-hidden="true"></i>
+            {{ product.category }}
+          </span>
+        </td>
+        <td>{{ product.price | currency: 'EUR' }}</td>
+        <td>
+          <span class="rating-text">
+            <i class="pi pi-star-fill" aria-hidden="true"></i>
+            {{ product.rating }}/5
+          </span>
+        </td>
+        <td class="actions-cell">
+          <div class="table-actions">
+            <p-button
+              icon="pi pi-pencil"
+              styleClass="sg-button-primary-inverted table-action"
+              (onClick)="onEdit(product)"
+              ariaLabel="Edit product"
+            ></p-button>
+            <p-button
+              icon="pi pi-trash"
+              styleClass="sg-button-cancel table-action"
+              (onClick)="onDelete(product)"
+              ariaLabel="Delete product"
+            ></p-button>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="5">
+          <div class="empty-state">
+            <i class="pi pi-info-circle" aria-hidden="true"></i>
+            <span>No products available. Add your first product above.</span>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

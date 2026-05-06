@@ -1,0 +1,43 @@
+<app-notification-container></app-notification-container>
+<app-dialog-container></app-dialog-container>
+
+<div class="page-layout">
+  <div class="form-section">
+    <h2>Edit Product</h2>
+    <app-product-form
+      [editingProduct]="editingProduct"
+      (productAdd)="addProduct($event)"
+      (productUpdate)="onUpdateProduct($event)"
+      (cancel)="cancelEdit()"
+    ></app-product-form>
+  </div>
+
+  <section class="products-section">
+    <div class="products-header-row">
+      <h2>Products ({{ filteredProducts.length }})</h2>
+      <p-button
+        icon="pi pi-question"
+        styleClass="sg-button-primary"
+        (onClick)="showHelp()"
+        ariaLabel="Show help"
+      ></p-button>
+    </div>
+
+    <div class="search-section">
+      <label for="search">Search products</label>
+      <app-autocomplete
+        inputId="search"
+        [suggestions]="searchSuggestions"
+        [value]="searchTerm"
+        (valueChange)="searchTerm = $event"
+        placeholder="Enter name, category or price"
+      ></app-autocomplete>
+    </div>
+
+    <app-table
+      [products]="filteredProducts"
+      (edit)="onEditProduct($event)"
+      (delete)="onDeleteProduct($event)"
+    ></app-table>
+  </section>
+</div>

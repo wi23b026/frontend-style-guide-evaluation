@@ -1,0 +1,87 @@
+.swatch-primary-light {
+  background-color: var(--color-primary-light);
+}
+
+.swatch-primary-dark {
+  background-color: var(--color-primary-dark);
+}
+
+.swatch-sand-light {
+  background-color: var(--color-sand-light);
+}
+
+.swatch-rose-light {
+  background-color: var(--color-rose-light);
+}
+
+.swatch-rose {
+  background-color: var(--color-rose);
+}
+
+.swatch-muted-rose {
+  background-color: var(--color-muted-rose);
+}
+
+.swatch-dark-rose {
+  background-color: var(--color-dark-rose);
+}
+
+.swatch-accent-red {
+  background-color: var(--color-accent-red);
+}
+
+.swatch-accent-orange {
+  background-color: var(--color-accent-orange);
+}
+
+.swatch-accent-yellow {
+  background-color: var(--color-accent-yellow);
+}
+
+.swatch-accent-green {
+  background-color: var(--color-accent-green);
+}
+
+.swatch-accent-blue {
+  background-color: var(--color-accent-blue);
+}
+
+.swatch-accent-indigo {
+  background-color: var(--color-accent-indigo);
+}
+
+.swatch-accent-violet {
+  background-color: var(--color-accent-violet);
+}
+
+.dark-mode-example {
+  background-color: var(--color-primary-dark);
+  border: 0.0625rem solid var(--color-primary-light);
+  border-radius: 0.5rem;
+  color: #ffffff;
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-3);
+}
+
+.dark-mode-title {
+  color: var(--color-sand-light);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h3);
+}
+
+.dark-mode-text {
+  color: #ffffff;
+}
+
+.dark-mode-button {
+  background-color: var(--color-accent-green);
+  border: 0.0625rem solid var(--color-accent-green);
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  min-height: 2.75rem;
+  padding: 0 var(--space-2);
+  width: fit-content;
+}

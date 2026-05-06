@@ -1,0 +1,48 @@
+@import 'primeflex/primeflex.css';
+
+/* Heavitas Font Import */
+@font-face {
+  font-family: 'Heavitas';
+  src: url('/assets/font/Heavitas.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Corporate Design Color Palette */
+:root {
+  /* Primary Colors */
+  --color-light-brown: #E6BB82;
+  --color-dark-brown: #372110;
+  --color-sand-light: #FFEDE0;
+  
+  /* Secondary Colors */
+  --color-rose-light: #FAD2D2;
+  --color-rose: #FAA2A2;
+  --color-muted-rose: #CC7878;
+  --color-dark-rose: #8F5656;
+  
+  /* Accent Colors */
+  --color-red: #E85C5C;
+  --color-orange: #F2A65A;
+  --color-yellow: #F2D15A;
+  --color-green: #6FCF97;
+  --color-blue: #5C8AE8;
+  --color-indigo: #4B5CC4;
+  --color-violet: #9B6CF2;
+  
+  /* Spacing System (8pt) */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+}
+
+html,
+body {
+  background-color: var(--color-sand-light);
+  color: var(--color-dark-brown);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
