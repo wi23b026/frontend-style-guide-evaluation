@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export interface Notification {
   id: string;
   message: string;
-  type: 'success' | 'error' | 'info' | 'warning';
+  type: 'success' | 'error' | 'info' | 'warning' | 'cancel';
   duration?: number;
 }
 
@@ -21,7 +21,7 @@ export class NotificationService {
     return this.notifications$.asObservable();
   }
 
-  show(message: string, type: 'success' | 'error' | 'info' | 'warning' = 'info', duration: number = 4000) {
+  show(message: string, type: 'success' | 'error' | 'info' | 'warning' | 'cancel' = 'info', duration: number = 4000) {
     const notification: Notification = {
       id: `notification-${this.notificationIdCounter++}`,
       message,
@@ -58,5 +58,9 @@ export class NotificationService {
 
   warning(message: string, duration?: number) {
     this.show(message, 'warning', duration);
+  }
+
+  cancel(message: string, duration?: number) {
+    this.show(message, 'cancel', duration);
   }
 }

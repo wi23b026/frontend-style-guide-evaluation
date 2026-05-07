@@ -47,6 +47,11 @@
   color: var(--color-on-accent-red);
 }
 
+.notification-cancel {
+  background-color: var(--color-accent-red);
+  color: var(--color-on-accent-red);
+}
+
 .notification-warning {
   background-color: var(--color-accent-orange);
 }

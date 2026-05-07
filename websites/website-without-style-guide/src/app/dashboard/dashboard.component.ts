@@ -113,8 +113,7 @@ export class DashboardComponent {
       `• Edit Product: Click the edit (✎) button next to a product to modify its details.\n` +
       `• Delete Product: Click the delete (🗑) button to remove a product. Confirm the action in the dialog.\n` +
       `• Search: Use the search bar to filter products by name, category, or price.\n` +
-      `• Cancel: Click the "Cancel" button while editing to discard changes.\n` +
-      `• Validation: The system will show error messages for missing or incorrect information.`
+      `• Cancel: Click the "Cancel" button while editing to discard changes.`
     );
   }
 }

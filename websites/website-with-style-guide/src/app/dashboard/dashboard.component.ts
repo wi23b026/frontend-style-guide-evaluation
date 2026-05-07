@@ -87,7 +87,7 @@ export class DashboardComponent {
       updatedProducts[index] = product;
       this.products = updatedProducts;
       this.notificationService.success(`Product "${product.name}" updated successfully.`);
-      this.cancelEdit();
+      this.clearEditMode();
     }
   }
 
@@ -104,6 +104,12 @@ export class DashboardComponent {
   }
 
   cancelEdit() {
+    const cancelledAction = this.editingProduct ? 'update' : 'add';
+    this.notificationService.cancel(`Product ${cancelledAction} cancelled.`);
+    this.clearEditMode();
+  }
+
+  private clearEditMode() {
     this.isEditMode = false;
     this.editingProduct = null;
   }

@@ -30,6 +30,8 @@ export class NotificationContainerComponent implements OnInit {
         return 'pi pi-check-circle';
       case 'error':
         return 'pi pi-times-circle';
+      case 'cancel':
+        return 'pi pi-ban';
       case 'warning':
         return 'pi pi-exclamation-triangle';
       case 'info':
