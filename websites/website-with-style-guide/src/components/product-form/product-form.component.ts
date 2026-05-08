@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { SelectModule } from 'primeng/select';
-import { AutocompleteComponent } from '../autocomplete/autocomplete.component';
 
 export interface Product {
   id?: string;
@@ -19,7 +18,7 @@ export interface Product {
   standalone: true,
   templateUrl: './product-form.component.html',
   styleUrl: './product-form.component.css',
-  imports: [CommonModule, FormsModule, ButtonModule, InputTextModule, SelectModule, AutocompleteComponent]
+  imports: [CommonModule, FormsModule, ButtonModule, InputTextModule, SelectModule]
 })
 export class ProductFormComponent {
   @Input() editingProduct: Product | null = null;
@@ -33,16 +32,6 @@ export class ProductFormComponent {
   rating: number | null = null;
 
   validationErrors: { [key: string]: string } = {};
-
-  productNameSuggestions = [
-    'Red Bean Taiyaki',
-    'Custard Taiyaki',
-    'Hojicha Taiyaki',
-    'Matcha Taiyaki',
-    'Chocolate Taiyaki'
-  ];
-
-  filteredProductNames: string[] = [];
 
   categoryOptions = [
     { label: 'Sweet', value: 'Sweet' },
@@ -95,14 +84,6 @@ export class ProductFormComponent {
       this.rating = this.editingProduct.rating;
       this.validationErrors = {};
     }
-  }
-
-  searchProductName(event: { query: string }) {
-    const query = event.query.toLowerCase().trim();
-
-    this.filteredProductNames = this.productNameSuggestions.filter(name =>
-      name.toLowerCase().includes(query)
-    );
   }
 
   validateForm(): boolean {

@@ -13,14 +13,22 @@ import { Product } from '../product-form/product-form.component';
 })
 export class TableComponent {
   @Input() products: Product[] = [];
+  @Input() selectedProductId: string | null = null;
+  @Output() selectionChange = new EventEmitter<Product>();
   @Output() edit = new EventEmitter<Product>();
   @Output() delete = new EventEmitter<Product>();
 
+  onSelect(product: Product) {
+    this.selectionChange.emit(product);
+  }
+
   onEdit(product: Product) {
+    this.onSelect(product);
     this.edit.emit(product);
   }
 
   onDelete(product: Product) {
+    this.onSelect(product);
     this.delete.emit(product);
   }
 }

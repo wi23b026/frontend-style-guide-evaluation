@@ -40,6 +40,8 @@
 
     <app-table
       [products]="filteredProducts"
+      [selectedProductId]="selectedProduct?.id ?? null"
+      (selectionChange)="selectProduct($event)"
       (edit)="onEditProduct($event)"
       (delete)="onDeleteProduct($event)"
     ></app-table>

@@ -254,28 +254,35 @@ li {
   background-color: #fff8f2;
 }
 
-.p-datatable .p-datatable-tbody > tr > td {
+.p-datatable .p-datatable-tbody > tr > td,
+.p-datatable .p-datatable-tbody > tr > th {
   background-color: inherit !important;
   transition: background-color 0.2s ease;
 }
 
 .p-datatable .p-datatable-tbody > tr:nth-child(odd):hover,
-.p-datatable .p-datatable-tbody > tr:nth-child(odd):hover > td {
+.p-datatable .p-datatable-tbody > tr:nth-child(odd):hover > td,
+.p-datatable .p-datatable-tbody > tr:nth-child(odd):hover > th {
   background-color: #fff8f2 !important;
 }
 
 .p-datatable .p-datatable-tbody > tr:nth-child(even):hover,
-.p-datatable .p-datatable-tbody > tr:nth-child(even):hover > td {
+.p-datatable .p-datatable-tbody > tr:nth-child(even):hover > td,
+.p-datatable .p-datatable-tbody > tr:nth-child(even):hover > th {
   background-color: #fff8f2 !important;
 }
 
-.p-datatable .p-datatable-tbody > tr > td {
+.p-datatable .p-datatable-tbody > tr > td,
+.p-datatable .p-datatable-tbody > tr > th {
   border-bottom: 0.0625rem solid #eee !important;
   color: var(--color-primary-dark);
+  font-weight: 400;
   padding: var(--space-2) !important;
+  text-align: left;
 }
 
-.p-datatable .p-datatable-tbody > tr:last-child > td {
+.p-datatable .p-datatable-tbody > tr:last-child > td,
+.p-datatable .p-datatable-tbody > tr:last-child > th {
   border-bottom: 0 !important;
 }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
@@ -27,9 +27,12 @@ import { DialogService } from '../../services/dialog.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  @ViewChild(ProductFormComponent) productForm?: ProductFormComponent;
+
   searchTerm = '';
   isEditMode = false;
   editingProduct: Product | null = null;
+  selectedProduct: Product | null = null;
   searchSuggestions: string[] = [];
 
   products: Product[] = [
@@ -70,11 +73,13 @@ export class DashboardComponent {
   addProduct(product: Product) {
     product.id = Date.now().toString();
     this.products = [...this.products, product];
+    this.selectedProduct = product;
     this.notificationService.success(`Product "${product.name}" added successfully.`);
     this.updateSearchSuggestions();
   }
 
   onEditProduct(product: Product) {
+    this.selectedProduct = product;
     this.editingProduct = { ...product };
     this.isEditMode = true;
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -86,8 +91,10 @@ export class DashboardComponent {
       const updatedProducts = [...this.products];
       updatedProducts[index] = product;
       this.products = updatedProducts;
+      this.selectedProduct = product;
       this.notificationService.success(`Product "${product.name}" updated successfully.`);
       this.clearEditMode();
+      this.updateSearchSuggestions();
     }
   }
 
@@ -97,6 +104,9 @@ export class DashboardComponent {
       `Are you sure you want to delete "${product.name}"? This action cannot be undone.`,
       () => {
         this.products = this.products.filter(p => p.id !== product.id);
+        if (this.selectedProduct?.id === product.id) {
+          this.selectedProduct = this.filteredProducts[0] ?? null;
+        }
         this.notificationService.success(`Product "${product.name}" deleted successfully.`);
         this.updateSearchSuggestions();
       }
@@ -107,6 +117,38 @@ export class DashboardComponent {
     const cancelledAction = this.editingProduct ? 'update' : 'add';
     this.notificationService.cancel(`Product ${cancelledAction} cancelled.`);
     this.clearEditMode();
+  }
+
+  selectProduct(product: Product) {
+    this.selectedProduct = product;
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardShortcut(event: KeyboardEvent) {
+    if (this.isDialogOpen()) {
+      return;
+    }
+
+    if (event.ctrlKey && event.key === 'Enter') {
+      event.preventDefault();
+      this.productForm?.submitForm();
+      return;
+    }
+
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      this.productForm?.cancelForm();
+      return;
+    }
+
+    if (this.isTypingTarget(event.target) || event.altKey || event.ctrlKey || event.metaKey) {
+      return;
+    }
+
+    if (event.key === 'Delete' && this.selectedProduct) {
+      event.preventDefault();
+      this.onDeleteProduct(this.selectedProduct);
+    }
   }
 
   private clearEditMode() {
@@ -121,7 +163,24 @@ export class DashboardComponent {
       `Edit Product: Click the edit button next to a product to modify its details.\n` +
       `Delete Product: Click the delete button to remove a product and confirm the action.\n` +
       `Search: Use the search bar to filter products by name, category, or price.\n` +
-      `Cancel: Click "Cancel" while editing to discard changes.`
+      `Cancel: Click "Cancel" while editing to discard changes.\n\n` +
+      `Keyboard shortcuts:\n` +
+      `Ctrl+Enter: Add or update the current product.\n` +
+      `Escape: Cancel the current add or edit action.\n` +
+      `Delete: Delete the selected product.`
     );
+  }
+
+  private isTypingTarget(target: EventTarget | null): boolean {
+    if (!(target instanceof HTMLElement)) {
+      return false;
+    }
+
+    const typingSelectors = 'input, textarea, select, [contenteditable="true"], [role="textbox"], [role="combobox"]';
+    return !!target.closest(typingSelectors);
+  }
+
+  private isDialogOpen(): boolean {
+    return !!document.querySelector('.p-dialog-mask, .p-dialog');
   }
 }

@@ -2,6 +2,18 @@
   overflow-x: auto;
 }
 
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 0.0625rem;
+  margin: -0.0625rem;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 0.0625rem;
+}
+
 .actions-header,
 .actions-cell {
   text-align: left;
@@ -13,6 +25,21 @@
   display: flex;
   gap: var(--space-1);
   justify-content: flex-start;
+}
+
+.product-table tr[tabindex="0"] {
+  cursor: pointer;
+}
+
+.product-table tr[tabindex="0"]:focus-visible {
+  outline: 0.1875rem solid rgba(232, 92, 92, 0.32);
+  outline-offset: -0.1875rem;
+}
+
+.product-table tr.selected-row,
+.product-table tr.selected-row > td,
+.product-table tr.selected-row > th {
+  background-color: var(--color-sand-light) !important;
 }
 
 .name-cell {

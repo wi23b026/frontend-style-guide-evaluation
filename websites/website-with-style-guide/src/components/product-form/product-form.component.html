@@ -1,15 +1,18 @@
 <div class="product-form">
   <div class="field-row">
     <label for="name">Product name</label>
-    <app-autocomplete
-      inputId="name"
-      [suggestions]="productNameSuggestions"
-      [value]="name"
-      (valueChange)="name = $event"
-      placeholder="Enter or search product name"
-      [invalid]="hasError('name')"
-      [describedBy]="getFieldMessageId('name')"
-    ></app-autocomplete>
+    <input
+      id="name"
+      class="sg-input"
+      type="text"
+      pInputText
+      [(ngModel)]="name"
+      placeholder="Enter product name"
+      autocomplete="off"
+      [class.sg-input-error]="hasError('name')"
+      [attr.aria-invalid]="hasError('name')"
+      [attr.aria-describedby]="getFieldMessageId('name')"
+    />
     <small *ngIf="hasError('name')" id="name-message" class="input-message input-message-error">
       {{ getError('name') }}
     </small>
@@ -81,6 +84,7 @@
       icon="pi pi-check"
       styleClass="sg-button-save"
       [disabled]="hasMissingRequiredFields"
+      [attr.aria-keyshortcuts]="'Control+Enter'"
       [attr.aria-describedby]="hasMissingRequiredFields ? 'save-disabled-message' : null"
       (onClick)="submitForm()"
     ></p-button>
@@ -90,6 +94,7 @@
       icon="pi pi-times"
       styleClass="sg-button-cancel"
       [disabled]="hasNothingToCancel"
+      [attr.aria-keyshortcuts]="'Escape'"
       [attr.aria-describedby]="hasNothingToCancel ? 'cancel-disabled-message' : null"
       (onClick)="cancelForm()"
     ></p-button>

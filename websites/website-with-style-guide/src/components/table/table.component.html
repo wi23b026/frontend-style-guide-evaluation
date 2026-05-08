@@ -1,21 +1,31 @@
 <div class="table-wrapper">
+  <p id="products-table-description" class="sr-only">
+    Product list with product name, category, price, rating and row actions.
+  </p>
   <p-table
     styleClass="sg-table product-table"
     [value]="products"
     [rowHover]="true"
+    [attr.aria-describedby]="'products-table-description'"
   >
     <ng-template pTemplate="header">
       <tr>
-        <th>Name</th>
-        <th>Category</th>
-        <th>Price</th>
-        <th>Rating</th>
-        <th class="actions-header">Actions</th>
+        <th scope="col">Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Price</th>
+        <th scope="col">Rating</th>
+        <th scope="col" class="actions-header">Actions</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-product>
-      <tr>
-        <td class="name-cell">{{ product.name }}</td>
+      <tr
+        tabindex="0"
+        (click)="onSelect(product)"
+        (focus)="onSelect(product)"
+        [class.selected-row]="selectedProductId === product.id"
+        [attr.aria-selected]="selectedProductId === product.id"
+      >
+        <th scope="row" class="name-cell">{{ product.name }}</th>
         <td>
           <span class="status-pill">
             <i class="pi pi-tag" aria-hidden="true"></i>
@@ -35,13 +45,14 @@
               icon="pi pi-pencil"
               styleClass="sg-button-primary-inverted table-action"
               (onClick)="onEdit(product)"
-              ariaLabel="Edit product"
+              [ariaLabel]="'Edit ' + product.name"
             ></p-button>
             <p-button
               icon="pi pi-trash"
               styleClass="sg-button-cancel table-action"
               (onClick)="onDelete(product)"
-              ariaLabel="Delete product"
+              [ariaLabel]="'Delete ' + product.name"
+              [attr.aria-keyshortcuts]="selectedProductId === product.id ? 'Delete' : null"
             ></p-button>
           </div>
         </td>
