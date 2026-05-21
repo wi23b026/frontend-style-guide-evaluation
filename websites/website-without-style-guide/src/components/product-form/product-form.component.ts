@@ -20,6 +20,7 @@ export interface Product {
 })
 export class ProductFormComponent {
   @Input() editingProduct: Product | null = null;
+  @Input() products: Product[] = [];
   @Output() productAdd = new EventEmitter<Product>();
   @Output() productUpdate = new EventEmitter<Product>();
   @Output() cancel = new EventEmitter<void>();
@@ -80,6 +81,8 @@ export class ProductFormComponent {
 
     if (!this.name || this.name.trim().length === 0) {
       this.validationErrors['name'] = 'Product name is required';
+    } else if (this.hasDuplicateName()) {
+      this.validationErrors['name'] = 'A product with this name already exists';
     }
 
     if (this.price === null || this.price === undefined) {
@@ -142,5 +145,14 @@ export class ProductFormComponent {
 
   getError(field: string): string {
     return this.validationErrors[field] || '';
+  }
+
+  private hasDuplicateName(): boolean {
+    const normalizedName = this.name.trim().toLowerCase();
+
+    return this.products.some(product =>
+      product.name.trim().toLowerCase() === normalizedName &&
+      product.id !== this.editingProduct?.id
+    );
   }
 }

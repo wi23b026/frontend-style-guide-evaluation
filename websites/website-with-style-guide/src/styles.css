@@ -215,6 +215,18 @@ li {
   border-color: #24150a !important;
 }
 
+.sg-button-help.p-button {
+  background-color: var(--color-accent-blue) !important;
+  border-color: var(--color-accent-blue) !important;
+  color: #ffffff !important;
+}
+
+.sg-button-help.p-button:not(:disabled):hover {
+  background-color: var(--color-accent-blue) !important;
+  border-color: var(--color-accent-blue) !important;
+  color: #ffffff !important;
+}
+
 .p-button.p-disabled,
 .p-button:disabled {
   opacity: 0.56 !important;

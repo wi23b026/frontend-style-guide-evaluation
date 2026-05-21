@@ -10,6 +10,7 @@
     <h2>Edit Product</h2>
     <app-product-form
       [editingProduct]="editingProduct"
+      [products]="products"
       (productAdd)="addProduct($event)"
       (productUpdate)="onUpdateProduct($event)"
       (cancel)="cancelEdit()"
@@ -21,7 +22,7 @@
       <h2>Products ({{ filteredProducts.length }})</h2>
       <p-button
         icon="pi pi-question"
-        styleClass="sg-button-primary"
+        styleClass="sg-button-help"
         (onClick)="showHelp()"
         ariaLabel="Show help"
       ></p-button>

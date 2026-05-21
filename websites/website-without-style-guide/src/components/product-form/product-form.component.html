@@ -8,6 +8,7 @@
       placeholder="Enter or search product name"
       [class.error]="hasError('name')"
     ></app-autocomplete>
+    <span *ngIf="hasError('name')" class="error-message">{{ getError('name') }}</span>
   </div>
   <div class="field-row">
     <label for="price">Price</label>

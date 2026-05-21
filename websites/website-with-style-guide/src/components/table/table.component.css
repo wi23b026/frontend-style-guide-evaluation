@@ -48,9 +48,11 @@
 
 .status-pill {
   align-items: center;
-  background-color: var(--color-rose-light);
-  border: 0.0625rem solid var(--color-primary-light);
+  background-color: var(--color-rose);
+  border: 0.0625rem solid rgba(36, 21, 10, 0.28);
   border-radius: 0.25rem;
+  box-shadow: inset 0 0 0 0.0625rem rgba(255, 255, 255, 0.2);
+  color: #24150a;
   display: inline-flex;
   gap: var(--space-1);
   font-size: var(--font-size-small);
@@ -60,7 +62,23 @@
 }
 
 .status-pill .pi {
-  color: var(--color-accent-blue);
+  color: currentColor;
+}
+
+.status-pill-sweet {
+  background-color: var(--color-rose);
+}
+
+.status-pill-herb {
+  background-color: var(--color-accent-green);
+}
+
+.status-pill-classic {
+  background-color: var(--color-accent-blue);
+}
+
+.status-pill-seasonal {
+  background-color: var(--color-accent-orange);
 }
 
 .rating-text {

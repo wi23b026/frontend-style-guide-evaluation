@@ -27,7 +27,7 @@
       >
         <th scope="row" class="name-cell">{{ product.name }}</th>
         <td>
-          <span class="status-pill">
+          <span class="status-pill" [ngClass]="getCategoryClass(product.category)">
             <i class="pi pi-tag" aria-hidden="true"></i>
             {{ product.category }}
           </span>

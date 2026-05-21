@@ -1,5 +1,6 @@
 <section id="technical" class="sg-section">
   <h2>Technical Guidelines</h2>
+  <div class="sg-subsection">
 
   <div class="sg-guidelines">
     <h3>Framework & Libraries</h3>
@@ -58,9 +59,9 @@
       <li>Services return typed UI-ready data or typed state objects</li>
       <li>Standard states:</li>
       <ul>
-          <li>loading</li>
-          <li>error</li>
-          <li>empty</li>
+          <li>Loading</li>
+          <li>Error</li>
+          <li>Empty</li>
         </ul>
     </ul>
   </div>
@@ -73,6 +74,7 @@
       <li>Services expose typed methods such as getProducts(), createProduct(product), updateProduct(product) and deleteProduct(id)</li>
       <li>Components receive loading, error, empty and success states from services or a page-level facade</li>
       <li>API errors must be mapped to messages that follow the wording rules before they are displayed</li>
+      <li>State changes must be surfaced through visible feedback so users understand what is happening</li>
       <li>Destructive API calls must require confirmation before the request is sent</li>
     </ul>
   </div>
@@ -86,6 +88,7 @@
       <li>Tables consume display-ready data and must not transform API payloads in templates</li>
       <li>Components display loading, empty, success and error states provided by services or page facades</li>
       <li>Notifications and dialogs are handled by shared services so feedback is consistent across pages</li>
+      <li>Shared services should keep feedback, errors and recovery actions consistent across similar workflows</li>
     </ul>
   </div>
 
@@ -101,5 +104,6 @@
           <li>1.1.1 bug fixes</li>
         </ul>
     </ul>
+  </div>
   </div>
 </section>

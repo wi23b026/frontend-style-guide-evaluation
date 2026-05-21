@@ -1,5 +1,6 @@
 <section id="components" class="sg-section">
   <h2>Components</h2>
+  <div class="sg-subsection">
 
   <div class="sg-guidelines">
     <h3>General Component Principles</h3>
@@ -12,6 +13,7 @@
       <li>System feedback must be visible through defined hover, focus, active, disabled, loading, validation and status states</li>
       <li>Error handling must use clear messages, accessible state attributes and safe recovery actions</li>
       <li>Status indicators must combine icon, colour and text so meaning never depends on colour alone</li>
+      <li>Every component must support recognition over recall through visible labels, predictable placement and familiar interaction patterns</li>
       <li>Developers should use the documented styleClass values exactly as shown in examples</li>
     </ul>
   </div>
@@ -19,7 +21,7 @@
   <div class="sg-guidelines">
     <h3>Approved Component Catalogue</h3>
     <ul>
-      <li>Buttons: PrimeNG p-button with sg-button-primary, sg-button-primary-inverted, sg-button-save, sg-button-cancel or sg-button-dark</li>
+      <li>Buttons: PrimeNG p-button with sg-button-primary, sg-button-primary-inverted, sg-button-save, sg-button-cancel for destructive actions or sg-button-dark</li>
       <li>Dropdowns: PrimeNG p-select with sg-select and sg-select-panel</li>
       <li>Tables: PrimeNG p-table with sg-table</li>
       <li>Inputs: PrimeNG pInputText with sg-input and validation classes when needed</li>
@@ -32,6 +34,7 @@
       <li>Icons: PrimeIcons only</li>
       <li>Autocomplete: approved custom input plus suggestion dropdown pattern when PrimeNG p-autoComplete is not used</li>
     </ul>
+  </div>
   </div>
 
   <section class="sg-subsection">
@@ -67,11 +70,11 @@
         </div>
 
         <div class="button-state-group">
-          <h5>Cancel State (Active / Focus / Disabled)</h5>
+          <h5>Danger State (Active / Focus / Disabled)</h5>
           <div class="button-group">
-            <p-button label="Cancel" icon="pi pi-times" styleClass="sg-button-cancel"></p-button>
-            <p-button label="Cancel" icon="pi pi-times" styleClass="sg-button-cancel sg-button-focus-demo"></p-button>
-            <p-button label="Cancel" icon="pi pi-times" styleClass="sg-button-cancel" [disabled]="true"></p-button>
+            <p-button label="Delete" icon="pi pi-trash" styleClass="sg-button-cancel"></p-button>
+            <p-button label="Delete" icon="pi pi-trash" styleClass="sg-button-cancel sg-button-focus-demo"></p-button>
+            <p-button label="Delete" icon="pi pi-trash" styleClass="sg-button-cancel" [disabled]="true"></p-button>
           </div>
         </div>
       </div>
@@ -85,7 +88,8 @@
         <li>Normal state: white background (#FFFFFF) with dark brown border and text (#372110) for primary actions</li>
         <li>Normal inverted state: dark brown background (#372110) with white text (#FFFFFF) for high-emphasis primary actions on light surfaces</li>
         <li>Save state: green background (#6FCF97) with white text for committing changes</li>
-        <li>Cancel state: red background (#E85C5C) with white text for dismissive actions</li>
+        <li>Danger state: red background (#E85C5C) with white text for destructive actions only</li>
+        <li>Buttons must make the next action obvious through clear verbs, familiar icons and consistent visual hierarchy</li>
         <li>Icon-to-text gap: 0.5rem</li>
         <li>Padding left/right: 1rem</li>
         <li>Padding bottom per state group: 1rem</li>
@@ -125,6 +129,7 @@
         <li>Border radius: 0.5rem maximum</li>
         <li>Use visible heading, content and optional action areas</li>
         <li>Cards must not contain other cards</li>
+        <li>Cards should support scanning by grouping related information with one clear purpose per card</li>
         <li>Size: cards fill their parent container up to the page content width and use at least 1.5rem internal padding</li>
         <li>Responsive behaviour: repeated cards use a responsive grid and collapse to one column on narrow viewports</li>
       </ul>
@@ -171,6 +176,7 @@
         <li>Size: table columns use content-based widths with a minimum table width of 40rem when several columns are shown</li>
         <li>Filtering: use PrimeNG p-table filtering APIs, such as column filters or global filter fields, instead of custom DOM filtering</li>
         <li>Sorting and pagination: use PrimeNG p-table inputs and templates when needed</li>
+        <li>Tables should preserve orientation by keeping headers, row actions and empty states predictable</li>
         <li>Responsive behaviour: table wrapper allows horizontal scrolling for narrow viewports</li>
       </ul>
     </div>
@@ -212,6 +218,7 @@
         <li>Use chevron icons to communicate expanded or collapsed state</li>
         <li>Accordion content should be secondary, not required for completing the main task</li>
         <li>Use aria-expanded or the equivalent PrimeNG accessibility behaviour</li>
+        <li>Accordions should reduce visual load without hiding information users need to complete the primary task</li>
         <li>Size: accordion headers use a minimum height of 2.75rem and panels use 1rem internal padding</li>
         <li>Responsive behaviour: accordion width follows the parent container and long header text wraps without hiding the chevron</li>
       </ul>
@@ -277,6 +284,7 @@
         <li>Active tab must be visually distinct and announced with aria-selected or equivalent behaviour</li>
         <li>Tab labels must follow the wording rules</li>
         <li>Do not use tabs when standard page navigation is clearer</li>
+        <li>Tabs should make navigation between peer views immediate without making users lose their current context</li>
         <li>Size: tab controls use a minimum height of 2.75rem and at least 1rem horizontal padding</li>
         <li>Responsive behaviour: tab lists scroll horizontally or wrap when labels do not fit; tab panels keep full parent width</li>
       </ul>
@@ -314,6 +322,7 @@
         <li>Option hover/focus: sand-light background</li>
         <li>Selected option: primary-light background with dark brown text</li>
         <li>Minimum height: 2.75rem</li>
+        <li>Dropdowns should limit choices to known options and make the selected value easy to confirm at a glance</li>
         <li>Size: closed dropdowns fill their form column and should not be narrower than 12rem</li>
         <li>Responsive behaviour: dropdown overlays align to the input width and remain usable on narrow viewports</li>
       </ul>
@@ -351,6 +360,7 @@
         <li>Keyboard support must include ArrowDown, ArrowUp, Enter and Escape</li>
         <li>Empty suggestion lists should not open an empty panel</li>
         <li>The input must keep a visible label and use aria-describedby for helper or error text</li>
+        <li>Autocomplete should speed up entry while keeping typed user input under the user's control</li>
         <li>Size: autocomplete inputs follow input field sizing; suggestion panels match the input width with a maximum visible height of five options</li>
         <li>Responsive behaviour: suggestion panels stay attached below the input and scroll internally instead of extending past the viewport</li>
       </ul>
@@ -402,6 +412,7 @@
         <li>Success state: green border and confirmation message after valid input</li>
         <li>Used for forms, search, authentication, and editable text fields</li>
         <li>Clear focus, validation, and helper messaging are required</li>
+        <li>Inputs should prevent mistakes through clear labels, examples, constraints and immediate field-level feedback</li>
         <li>Size: inputs use a minimum height of 2.75rem, fill their form column and should not be narrower than 12rem</li>
         <li>Responsive behaviour: multi-column forms collapse to fewer columns and then one column on narrow viewports</li>
       </ul>
@@ -436,6 +447,7 @@
         <li>Success, warning, error and information states must combine icon, colour and text</li>
         <li>Use role="status" for passive updates and role="alert" for urgent errors</li>
         <li>Notification text must follow the wording rules</li>
+        <li>Notifications should confirm outcomes without interrupting the user's next action unless attention is required</li>
         <li>Dismiss controls must have accessible labels when shown</li>
         <li>Size: notifications use content height, 1rem padding and a maximum width of 25rem</li>
         <li>Responsive behaviour: notifications fit within the viewport width and stack vertically with consistent spacing</li>
@@ -470,6 +482,7 @@
         <li>Navigation labels must follow the wording rules</li>
         <li>Active or focused items must be visually clear</li>
         <li>Icon-only navigation actions require aria-label</li>
+        <li>Navigation should help users understand location, available destinations and the shortest path to common tasks</li>
         <li>Size: global navigation uses a minimum height of 5rem; nav links and icon actions use a minimum height of 2.75rem</li>
         <li>Responsive behaviour: brand remains first, navigation actions align to the right on desktop and wrap or stack below the brand on narrow viewports</li>
       </ul>
@@ -502,6 +515,7 @@
         <li>Focus trap required</li>
         <li>Keyboard (ESC) support required</li>
         <li>Clear structure (header, content, actions)</li>
+        <li>Dialogs should focus attention on one decision or task and provide a safe way to dismiss without data loss</li>
         <li>Size: dialogs use a maximum width of 32rem for confirmations and short forms, with 1.5rem content padding</li>
         <li>Responsive behaviour: dialogs shrink to fit narrow viewports with visible margins and scroll internally when content is taller than the viewport</li>
       </ul>
@@ -559,6 +573,7 @@
         <li>Fields with errors must use aria-invalid="true" and connect messages with aria-describedby</li>
         <li>Validation should happen close to the field that needs attention</li>
         <li>Users must be able to cancel, close, or safely recover from interrupted processes</li>
+        <li>Validation should prevent errors where possible and explain fixes in plain, specific language when errors happen</li>
         <li>Size: validation messages use small text and sit directly below the related control without changing the control height</li>
         <li>Responsive behaviour: validation messages wrap inside the field column and remain visible when forms collapse to one column</li>
       </ul>
@@ -601,6 +616,7 @@
         <li>Green means success, orange means warning, red means error, blue means information</li>
         <li>Do not communicate status through colour alone</li>
         <li>Status labels must follow the wording rules</li>
+        <li>Status indicators should make system state perceivable, understandable and comparable at a glance</li>
         <li>Size: status indicators use a minimum height of 1.75rem with compact horizontal padding</li>
         <li>Responsive behaviour: status labels wrap only when necessary and remain paired with their icon</li>
       </ul>
@@ -618,7 +634,7 @@
       <h4>Example</h4>
       <div class="button-group">
         <p-button label="Save" icon="pi pi-check" styleClass="sg-button-save"></p-button>
-        <p-button label="Cancel" icon="pi pi-times" styleClass="sg-button-cancel"></p-button>
+        <p-button label="Cancel" icon="pi pi-times" styleClass="sg-button-primary"></p-button>
         <p-button label="Delete" icon="pi pi-trash" styleClass="sg-button-cancel"></p-button>
       </div>
     </div>
@@ -626,9 +642,11 @@
     <div class="sg-guidelines">
       <h4>Characteristics</h4>
       <ul>
+        <li>Only destructive actions should use danger styling</li>
         <li>Destructive actions must be visually distinct and require confirmation when data will be lost</li>
         <li>Cancel or close actions must be visible when users are inside a process</li>
         <li>Disabled actions must only be used when the required conditions are not met</li>
+        <li>Safe interactions should prevent accidental harm through clear hierarchy, confirmation and reversible exits</li>
         <li>Interfaces should show only necessary actions for the current context</li>
         <li>Size: safe action groups use the standard button sizes and keep at least 1rem between actions</li>
         <li>Responsive behaviour: action groups keep primary and destructive actions visible, wrapping or stacking without changing action order</li>
@@ -659,6 +677,7 @@
         <li>Single icon library only (PrimeIcons)</li>
         <li>House-owned custom icons are reserved for the logo and brand assets only</li>
         <li>Consistent icon style required</li>
+        <li>Icons should support recognition and meaning, not replace text when an action or state may be ambiguous</li>
         <li>Size: standard icons use 1rem inside text flows and 1.25rem to 1.5rem for standalone status use</li>
         <li>Responsive behaviour: headings wrap naturally without viewport-based font scaling, and icons stay aligned with their text labels</li>
       </ul>

@@ -16,6 +16,7 @@
     <h2>{{ isEditMode ? 'Edit Product' : 'Add new product' }}</h2>
     <app-product-form
       [editingProduct]="editingProduct"
+      [products]="products"
       (productAdd)="addProduct($event)"
       (productUpdate)="onUpdateProduct($event)"
       (cancel)="cancelEdit()"

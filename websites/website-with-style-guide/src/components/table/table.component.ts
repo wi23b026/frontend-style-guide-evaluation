@@ -18,6 +18,10 @@ export class TableComponent {
   @Output() edit = new EventEmitter<Product>();
   @Output() delete = new EventEmitter<Product>();
 
+  getCategoryClass(category: string): string {
+    return `status-pill-${category.toLowerCase()}`;
+  }
+
   onSelect(product: Product) {
     this.selectionChange.emit(product);
   }

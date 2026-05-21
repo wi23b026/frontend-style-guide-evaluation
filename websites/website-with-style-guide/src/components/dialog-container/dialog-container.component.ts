@@ -54,7 +54,11 @@ export class DialogContainerComponent implements OnInit {
   }
 
   getConfirmStyle(dialog: DialogConfig): string {
-    return dialog.type === 'confirm' ? 'sg-button-cancel' : 'sg-button-dark';
+    if (dialog.type === 'confirm') {
+      return 'sg-button-cancel';
+    }
+
+    return dialog.type === 'help' ? 'sg-button-save' : 'sg-button-dark';
   }
 
   hasBackdrop(): boolean {

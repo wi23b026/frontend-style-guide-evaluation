@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SgAccessibilityComponent } from '../components/sg-accessibility/sg-accessibility.component';
+import { SgColorsComponent } from '../components/sg-colors/sg-colors.component';
 import { SgComponentsComponent } from '../components/sg-components/sg-components.component';
 import { SgDesignFoundationsComponent } from '../components/sg-design-foundations/sg-design-foundations.component';
 import { SgFooterComponent } from '../components/sg-footer/sg-footer.component';
@@ -8,7 +9,9 @@ import { SgHeaderComponent } from '../components/sg-header/sg-header.component';
 import { SgIntroductionComponent } from '../components/sg-introduction/sg-introduction.component';
 import { SgNavigationComponent } from '../components/sg-navigation/sg-navigation.component';
 import { SgPrinciplesComponent } from '../components/sg-principles/sg-principles.component';
+import { SgSpacingComponent } from '../components/sg-spacing/sg-spacing.component';
 import { SgTechnicalComponent } from '../components/sg-technical/sg-technical.component';
+import { SgTypographyComponent } from '../components/sg-typography/sg-typography.component';
 import { SgWordingComponent } from '../components/sg-wording/sg-wording.component';
 
 @Component({
@@ -17,6 +20,7 @@ import { SgWordingComponent } from '../components/sg-wording/sg-wording.componen
   imports: [
     RouterOutlet,
     SgAccessibilityComponent,
+    SgColorsComponent,
     SgComponentsComponent,
     SgDesignFoundationsComponent,
     SgFooterComponent,
@@ -24,7 +28,9 @@ import { SgWordingComponent } from '../components/sg-wording/sg-wording.componen
     SgIntroductionComponent,
     SgNavigationComponent,
     SgPrinciplesComponent,
+    SgSpacingComponent,
     SgTechnicalComponent,
+    SgTypographyComponent,
     SgWordingComponent
   ],
   templateUrl: './app.html'
