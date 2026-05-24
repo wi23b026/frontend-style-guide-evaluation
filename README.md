@@ -1,5 +1,5 @@
 # Evaluating the Impact of Front-End Style Guide Usage on Accessibility and Usability in Web Applications
-Development and evaluation of a frontend style guide, focusing on usability and accessibility.
+Development and evaluation of a frontend style guide, focusing on accessibility and usability.
 
 ## Reasearch Objective
 - RQ1: Which challenges occur when working without a front-end style guide in terms of accessibility and usability?
